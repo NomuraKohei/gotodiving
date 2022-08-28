@@ -1,0 +1,80 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 28 Aug 2022 09:40:46 GMT
+ */
+
+:root {
+  --token-set-order-0: global;
+  --color-background-default: #333333;
+  --color-background-header: rgba(0, 0, 0, 0.5);
+  --color-background-balloon: rgba(255, 255, 255, 0.3);
+  --color-text-disabled: #bbbbbb;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #333333;
+  --color-front-cover: rgba(0, 0, 0, 0.4);
+  --font-families-hiragino-kaku-gothic-pro: Hiragino Kaku Gothic Pro;
+  --line-heights-0: 150%;
+  --line-heights-1: 200%;
+  --font-weights-hiragino-kaku-gothic-pro-0: W6;
+  --font-weights-hiragino-kaku-gothic-pro-1: W3;
+  --font-size-0: 16;
+  --font-size-1: 24;
+  --font-size-2: 32;
+  --font-size-3: 48;
+  --font-size-4: 56;
+  --font-size-5: 80;
+  --letter-spacing-0: 10%;
+  --letter-spacing-1: 20%;
+  --letter-spacing-2: 5%;
+  --paragraph-spacing-0: 0;
+  --text-h1-font-family: Hiragino Kaku Gothic Pro;
+  --text-h1-font-weight: W6;
+  --text-h1-line-height: 150%;
+  --text-h1-font-size: 80;
+  --text-h1-letter-spacing: 10%;
+  --text-h1-paragraph-spacing: 0;
+  --text-h1-text-case: none;
+  --text-h1-text-decoration: none;
+  --text-h2-font-family: Hiragino Kaku Gothic Pro;
+  --text-h2-font-weight: W6;
+  --text-h2-line-height: 150%;
+  --text-h2-font-size: 56;
+  --text-h2-letter-spacing: 10%;
+  --text-h2-paragraph-spacing: 0;
+  --text-h2-text-case: none;
+  --text-h2-text-decoration: none;
+  --text-xlarge-font-family: Hiragino Kaku Gothic Pro;
+  --text-xlarge-font-weight: W6;
+  --text-xlarge-line-height: 150%;
+  --text-xlarge-font-size: 48;
+  --text-xlarge-letter-spacing: 10%;
+  --text-xlarge-paragraph-spacing: 0;
+  --text-xlarge-text-case: none;
+  --text-xlarge-text-decoration: none;
+  --text-medium-font-family: Hiragino Kaku Gothic Pro;
+  --text-medium-font-weight: W6;
+  --text-medium-line-height: 200%;
+  --text-medium-font-size: 24;
+  --text-medium-letter-spacing: 10%;
+  --text-medium-paragraph-spacing: 0;
+  --text-medium-text-case: none;
+  --text-medium-text-decoration: none;
+  --text-large-font-family: Hiragino Kaku Gothic Pro;
+  --text-large-font-weight: W6;
+  --text-large-line-height: 150%;
+  --text-large-font-size: 32;
+  --text-large-letter-spacing: 20%;
+  --text-large-paragraph-spacing: 0;
+  --text-large-text-case: none;
+  --text-large-text-decoration: none;
+  --text-small-font-family: Hiragino Kaku Gothic Pro;
+  --text-small-font-weight: W3;
+  --text-small-line-height: 150%;
+  --text-small-font-size: 16;
+  --text-small-letter-spacing: 5%;
+  --text-small-paragraph-spacing: 0;
+  --text-small-text-case: none;
+  --text-small-text-decoration: none;
+  --text-case-none: none;
+  --text-decoration-none: none;
+}
