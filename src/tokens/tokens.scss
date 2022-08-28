@@ -1,0 +1,99 @@
+
+/**
+ * Do not edit directly
+ * Generated on Sun, 28 Aug 2022 07:52:14 GMT
+ */
+
+$text-decoration-none: none !default;
+$text-case-none: none !default;
+$text-small: [object Object] !default;
+$text-large: [object Object] !default;
+$text-medium: [object Object] !default;
+$text-xlarge: [object Object] !default;
+$text-h2: [object Object] !default;
+$text-h1: [object Object] !default;
+$paragraph-spacing-0: 0 !default;
+$letter-spacing-2: 5% !default;
+$letter-spacing-1: 20% !default;
+$letter-spacing-0: 10% !default;
+$font-size-5: 80 !default;
+$font-size-4: 56 !default;
+$font-size-3: 48 !default;
+$font-size-2: 32 !default;
+$font-size-1: 24 !default;
+$font-size-0: 16 !default;
+$font-weights-hiragino-kaku-gothic-pro-1: W3 !default;
+$font-weights-hiragino-kaku-gothic-pro-0: W6 !default;
+$line-heights-1: 200% !default;
+$line-heights-0: 150% !default;
+$font-families-hiragino-kaku-gothic-pro: Hiragino Kaku Gothic Pro !default;
+$color-front-cover: rgba(0, 0, 0, 0.4) !default;
+$color-text-secondary: #333333 !default;
+$color-text-primary: #ffffff !default;
+$color-text-disabled: #bbbbbb !default;
+$color-background-balloon: rgba(255, 255, 255, 0.3) !default;
+$color-background-header: rgba(0, 0, 0, 0.5) !default;
+$color-background-default: #333333 !default;
+$token-set-order-0: global !default;
+
+$css-tokens: (
+  'tokenSetOrder': (
+    '0': $token-set-order-0
+  ),
+  'color': (
+    'background': (
+      'default': $color-background-default,
+      'header': $color-background-header,
+      'balloon': $color-background-balloon
+    ),
+    'text': (
+      'disabled': $color-text-disabled,
+      'primary': $color-text-primary,
+      'secondary': $color-text-secondary
+    ),
+    'front': (
+      'cover': $color-front-cover
+    )
+  ),
+  'fontFamilies': (
+    'hiragino-kaku-gothic-pro': $font-families-hiragino-kaku-gothic-pro
+  ),
+  'lineHeights': (
+    '0': $line-heights-0,
+    '1': $line-heights-1
+  ),
+  'fontWeights': (
+    'hiragino-kaku-gothic-pro-0': $font-weights-hiragino-kaku-gothic-pro-0,
+    'hiragino-kaku-gothic-pro-1': $font-weights-hiragino-kaku-gothic-pro-1
+  ),
+  'fontSize': (
+    '0': $font-size-0,
+    '1': $font-size-1,
+    '2': $font-size-2,
+    '3': $font-size-3,
+    '4': $font-size-4,
+    '5': $font-size-5
+  ),
+  'letterSpacing': (
+    '0': $letter-spacing-0,
+    '1': $letter-spacing-1,
+    '2': $letter-spacing-2
+  ),
+  'paragraphSpacing': (
+    '0': $paragraph-spacing-0
+  ),
+  'text': (
+    'h1': $text-h1,
+    'h2': $text-h2,
+    'xlarge': $text-xlarge,
+    'medium': $text-medium,
+    'large': $text-large,
+    'small': $text-small
+  ),
+  'textCase': (
+    'none': $text-case-none
+  ),
+  'textDecoration': (
+    'none': $text-decoration-none
+  )
+);

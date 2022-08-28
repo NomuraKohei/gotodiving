@@ -1,0 +1,208 @@
+{
+  "tokenSetOrder": {
+    "0": {
+      "value": "global",
+      "type": "other"
+    }
+  },
+  "color": {
+    "background": {
+      "default": {
+        "value": "#333333",
+        "type": "color"
+      },
+      "header": {
+        "value": "#00000080",
+        "type": "color"
+      },
+      "balloon": {
+        "value": "#ffffff4d",
+        "type": "color"
+      }
+    },
+    "text": {
+      "disabled": {
+        "value": "#bbbbbb",
+        "type": "color"
+      },
+      "primary": {
+        "value": "#ffffff",
+        "type": "color"
+      },
+      "secondary": {
+        "value": "#333333",
+        "type": "color"
+      }
+    },
+    "front": {
+      "cover": {
+        "value": "#00000066",
+        "type": "color"
+      }
+    }
+  },
+  "fontFamilies": {
+    "hiragino-kaku-gothic-pro": {
+      "value": "Hiragino Kaku Gothic Pro",
+      "type": "fontFamilies"
+    }
+  },
+  "lineHeights": {
+    "0": {
+      "value": "150%",
+      "type": "lineHeights"
+    },
+    "1": {
+      "value": "200%",
+      "type": "lineHeights"
+    }
+  },
+  "fontWeights": {
+    "hiragino-kaku-gothic-pro-0": {
+      "value": "W6",
+      "type": "fontWeights"
+    },
+    "hiragino-kaku-gothic-pro-1": {
+      "value": "W3",
+      "type": "fontWeights"
+    }
+  },
+  "fontSize": {
+    "0": {
+      "value": 16,
+      "type": "fontSizes"
+    },
+    "1": {
+      "value": 24,
+      "type": "fontSizes"
+    },
+    "2": {
+      "value": 32,
+      "type": "fontSizes"
+    },
+    "3": {
+      "value": 48,
+      "type": "fontSizes"
+    },
+    "4": {
+      "value": 56,
+      "type": "fontSizes"
+    },
+    "5": {
+      "value": 80,
+      "type": "fontSizes"
+    }
+  },
+  "letterSpacing": {
+    "0": {
+      "value": "10%",
+      "type": "letterSpacing"
+    },
+    "1": {
+      "value": "20%",
+      "type": "letterSpacing"
+    },
+    "2": {
+      "value": "5%",
+      "type": "letterSpacing"
+    }
+  },
+  "paragraphSpacing": {
+    "0": {
+      "value": 0,
+      "type": "paragraphSpacing"
+    }
+  },
+  "text": {
+    "h1": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W6",
+        "lineHeight": "150%",
+        "fontSize": 80,
+        "letterSpacing": "10%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    },
+    "h2": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W6",
+        "lineHeight": "150%",
+        "fontSize": 56,
+        "letterSpacing": "10%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    },
+    "xlarge": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W6",
+        "lineHeight": "150%",
+        "fontSize": 48,
+        "letterSpacing": "10%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    },
+    "medium": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W6",
+        "lineHeight": "200%",
+        "fontSize": 24,
+        "letterSpacing": "10%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    },
+    "large": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W6",
+        "lineHeight": "150%",
+        "fontSize": 32,
+        "letterSpacing": "20%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    },
+    "small": {
+      "value": {
+        "fontFamily": "Hiragino Kaku Gothic Pro",
+        "fontWeight": "W3",
+        "lineHeight": "150%",
+        "fontSize": 16,
+        "letterSpacing": "5%",
+        "paragraphSpacing": 0,
+        "textCase": "none",
+        "textDecoration": "none"
+      },
+      "type": "typography"
+    }
+  },
+  "textCase": {
+    "none": {
+      "value": "none",
+      "type": "textCase"
+    }
+  },
+  "textDecoration": {
+    "none": {
+      "value": "none",
+      "type": "textDecoration"
+    }
+  }
+}
