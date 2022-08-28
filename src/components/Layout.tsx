@@ -1,14 +1,26 @@
-import Head from 'next/head';
-import styles from '../styles/Layout.module.scss';
-import React, { ReactNode } from 'react';
-import Script from 'next/script';
+import Head from "next/head";
+import styles from "@styles/Layout.module.scss";
+import React, { ReactNode } from "react";
+import Script from "next/script";
+import { useRouter } from "next/router";
 
 interface Props {
-  children: ReactNode
-  title: string
+  children: ReactNode;
+  title: string;
 }
 
 const Layout: React.FC<Props> = (props) => {
+  const menu = [
+    { text: "トップ", url: "/" },
+    { text: "風景", url: "/landscape" },
+    { text: "生物", url: "/marinelife" },
+    { text: "装備", url: "/equipment" },
+    { text: "グルメ", url: "/gourmet" },
+  ];
+  const router = useRouter();
+
+  console.log(router.asPath);
+
   return (
     <div className={styles.container}>
       <Script
@@ -24,28 +36,63 @@ const Layout: React.FC<Props> = (props) => {
                 `}
       </Script>
       <Head>
-        <title>{props.title}</title>
+        <title>{props.title === "トップ" ? "海の歩き方" : `海の歩き方 | ${props.title}`}</title>
         <meta
-          name='description'
-          content='2002年から2020年までの月毎の海水温の平均をビジュアライズした。' />
-        <link rel='icon' href='/favicon.ico' />
+          name="description"
+          content="2002年から2020年までの月毎の海水温の平均をビジュアライズした。"
+        />
+        <link rel="icon" href="/favicon.ico" />
         <meta property="og:title" content="Seawater Temperature Data Visualization" />
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ" />
-        <meta property="og:url" content="https://seawater-temperature-data-visualization.vercel.app/" />
-        <meta property="og:image" content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg" />
+        <meta
+          property="og:description"
+          content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ"
+        />
+        <meta
+          property="og:url"
+          content="https://seawater-temperature-data-visualization.vercel.app/"
+        />
+        <meta
+          property="og:image"
+          content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg"
+        />
         <meta property="og:site_name" content="Seawater Temperature Data Visualization" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Seawater Temperature Data Visualization" />
-        <meta name="twitter:description" content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ" />
-        <meta name="twitter:image" content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg" />
-        <meta name="twitter:url" content="https://seawater-temperature-data-visualization.vercel.app/" />
+        <meta
+          name="twitter:description"
+          content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ"
+        />
+        <meta
+          name="twitter:image"
+          content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg"
+        />
+        <meta
+          name="twitter:url"
+          content="https://seawater-temperature-data-visualization.vercel.app/"
+        />
       </Head>
-
-      <main className={styles.main}>
-        {props.children}
-      </main>
-      <footer className={styles.footer}><small className={styles.small}>© D214038 Kohei Nomura All right reserved</small></footer>
+      <header className={styles.header}>
+        <nav aria-label="海の歩き方">
+          <ul role="menubar" aria-label="海の歩き方" className={styles.menubar}>
+            {menu.map((item) => (
+              <li role="none" key={item.text} className={styles.menulist}>
+                <a
+                  role="menuitem"
+                  href={router.asPath === item.url ? undefined : item.url}
+                  aria-current={router.asPath === item.url ? "page" : undefined}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+      <main className={styles.main}>{props.children}</main>
+      <footer className={styles.footer}>
+        <small>© D214038 Kohei Nomura All right reserved</small>
+      </footer>
     </div>
   );
 };

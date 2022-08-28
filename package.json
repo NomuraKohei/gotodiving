@@ -7,10 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "token": "./node_modules/.bin/token-transformer src/tokens/tokens.json src/tokens/output.json --expandTypography && style-dictionary build --config style-dictionary.config.json"
+    "token-gen": "./node_modules/.bin/token-transformer src/tokens/tokens.json src/tokens/output.json --expandTypography && style-dictionary build --config style-dictionary.config.json"
   },
   "dependencies": {
     "next": "12.2.5",
+    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.54.5",
@@ -22,6 +23,8 @@
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
     "style-dictionary": "^3.7.1",
     "typescript": "4.8.2"
   }

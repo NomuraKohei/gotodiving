@@ -1,18 +1,22 @@
-@use '../tokens/tokens.css';
+// reset css
+@use "../../node_modules/normalize.css/normalize.css";
+
+// design tokens(variables)
+@use "../tokens/tokens.css";
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh;
+  background: var(--color-background-default);
+  color: var(--color-text-primary);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+h1 {
+  font-size: #{var(--font-size-5) px};
 }
