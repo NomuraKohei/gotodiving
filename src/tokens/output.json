@@ -67,32 +67,6 @@
       "type": "fontWeights"
     }
   },
-  "fontSize": {
-    "0": {
-      "value": 16,
-      "type": "fontSizes"
-    },
-    "1": {
-      "value": 24,
-      "type": "fontSizes"
-    },
-    "2": {
-      "value": 32,
-      "type": "fontSizes"
-    },
-    "3": {
-      "value": 48,
-      "type": "fontSizes"
-    },
-    "4": {
-      "value": 56,
-      "type": "fontSizes"
-    },
-    "5": {
-      "value": 80,
-      "type": "fontSizes"
-    }
-  },
   "letterSpacing": {
     "0": {
       "value": "10%",
@@ -114,108 +88,6 @@
     }
   },
   "text": {
-    "h1": {
-      "fontFamily": {
-        "value": "Hiragino Kaku Gothic Pro",
-        "type": "fontFamily"
-      },
-      "fontWeight": {
-        "value": "W6",
-        "type": "fontWeight"
-      },
-      "lineHeight": {
-        "value": "150%",
-        "type": "lineHeight"
-      },
-      "fontSize": {
-        "value": 80,
-        "type": "fontSize"
-      },
-      "letterSpacing": {
-        "value": "10%",
-        "type": "letterSpacing"
-      },
-      "paragraphSpacing": {
-        "value": 0,
-        "type": "paragraphSpacing"
-      },
-      "textCase": {
-        "value": "none",
-        "type": "textCase"
-      },
-      "textDecoration": {
-        "value": "none",
-        "type": "textDecoration"
-      }
-    },
-    "h2": {
-      "fontFamily": {
-        "value": "Hiragino Kaku Gothic Pro",
-        "type": "fontFamily"
-      },
-      "fontWeight": {
-        "value": "W6",
-        "type": "fontWeight"
-      },
-      "lineHeight": {
-        "value": "150%",
-        "type": "lineHeight"
-      },
-      "fontSize": {
-        "value": 56,
-        "type": "fontSize"
-      },
-      "letterSpacing": {
-        "value": "10%",
-        "type": "letterSpacing"
-      },
-      "paragraphSpacing": {
-        "value": 0,
-        "type": "paragraphSpacing"
-      },
-      "textCase": {
-        "value": "none",
-        "type": "textCase"
-      },
-      "textDecoration": {
-        "value": "none",
-        "type": "textDecoration"
-      }
-    },
-    "xlarge": {
-      "fontFamily": {
-        "value": "Hiragino Kaku Gothic Pro",
-        "type": "fontFamily"
-      },
-      "fontWeight": {
-        "value": "W6",
-        "type": "fontWeight"
-      },
-      "lineHeight": {
-        "value": "150%",
-        "type": "lineHeight"
-      },
-      "fontSize": {
-        "value": 48,
-        "type": "fontSize"
-      },
-      "letterSpacing": {
-        "value": "10%",
-        "type": "letterSpacing"
-      },
-      "paragraphSpacing": {
-        "value": 0,
-        "type": "paragraphSpacing"
-      },
-      "textCase": {
-        "value": "none",
-        "type": "textCase"
-      },
-      "textDecoration": {
-        "value": "none",
-        "type": "textDecoration"
-      }
-    },
     "medium": {
       "fontFamily": {
         "value": "Hiragino Kaku Gothic Pro",
@@ -230,7 +102,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": 24,
+        "value": "1em",
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -264,7 +136,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": 32,
+        "value": "1.5rem",
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -298,11 +170,113 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": 16,
+        "value": "0.75rem",
         "type": "fontSize"
       },
       "letterSpacing": {
         "value": "5%",
+        "type": "letterSpacing"
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "type": "paragraphSpacing"
+      },
+      "textCase": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "textDecoration": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "xxx-large": {
+      "fontFamily": {
+        "value": "Hiragino Kaku Gothic Pro",
+        "type": "fontFamily"
+      },
+      "fontWeight": {
+        "value": "W6",
+        "type": "fontWeight"
+      },
+      "lineHeight": {
+        "value": "150%",
+        "type": "lineHeight"
+      },
+      "fontSize": {
+        "value": "4.5rem",
+        "type": "fontSize"
+      },
+      "letterSpacing": {
+        "value": "10%",
+        "type": "letterSpacing"
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "type": "paragraphSpacing"
+      },
+      "textCase": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "textDecoration": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "xx-large": {
+      "fontFamily": {
+        "value": "Hiragino Kaku Gothic Pro",
+        "type": "fontFamily"
+      },
+      "fontWeight": {
+        "value": "W6",
+        "type": "fontWeight"
+      },
+      "lineHeight": {
+        "value": "150%",
+        "type": "lineHeight"
+      },
+      "fontSize": {
+        "value": "3rem",
+        "type": "fontSize"
+      },
+      "letterSpacing": {
+        "value": "10%",
+        "type": "letterSpacing"
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "type": "paragraphSpacing"
+      },
+      "textCase": {
+        "value": "none",
+        "type": "textCase"
+      },
+      "textDecoration": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "x-large": {
+      "fontFamily": {
+        "value": "Hiragino Kaku Gothic Pro",
+        "type": "fontFamily"
+      },
+      "fontWeight": {
+        "value": "W6",
+        "type": "fontWeight"
+      },
+      "lineHeight": {
+        "value": "150%",
+        "type": "lineHeight"
+      },
+      "fontSize": {
+        "value": "2.5rem",
+        "type": "fontSize"
+      },
+      "letterSpacing": {
+        "value": "10%",
         "type": "letterSpacing"
       },
       "paragraphSpacing": {
@@ -329,6 +303,56 @@
     "none": {
       "value": "none",
       "type": "textDecoration"
+    }
+  },
+  "fontSize": {
+    "0": {
+      "value": 12,
+      "type": "fontSizes"
+    },
+    "1": {
+      "value": 16,
+      "type": "fontSizes"
+    },
+    "2": {
+      "value": 24,
+      "type": "fontSizes"
+    },
+    "3": {
+      "value": 40,
+      "type": "fontSizes"
+    },
+    "4": {
+      "value": 48,
+      "type": "fontSizes"
+    },
+    "5": {
+      "value": 72,
+      "type": "fontSizes"
+    },
+    "small": {
+      "value": "0.75rem",
+      "type": "fontSizes"
+    },
+    "medium": {
+      "value": "1em",
+      "type": "fontSizes"
+    },
+    "large": {
+      "value": "1.5rem",
+      "type": "fontSizes"
+    },
+    "x-large": {
+      "value": "2.5rem",
+      "type": "fontSizes"
+    },
+    "xx-large": {
+      "value": "3rem",
+      "type": "fontSizes"
+    },
+    "xxx-large": {
+      "value": "4.5rem",
+      "type": "fontSizes"
     }
   }
 }
