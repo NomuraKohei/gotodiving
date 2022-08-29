@@ -1,4 +1,14 @@
+.backgroundWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
+  filter: brightness(80%);
+}
+
 .heroheader {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,4 +16,35 @@
   width: 100%;
   height: 100vh;
   position: relative;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.subTitle {
+  margin-bottom: 80px;
+}
+
+.icon {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  bottom: 40px;
+  left: calc(50% - 4px);
+
+  &::after {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+    width: 100px;
+    content: "know more";
+  }
+  font-size: var(--text-small-font-size);
 }

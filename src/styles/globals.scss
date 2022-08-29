@@ -13,10 +13,21 @@ ul {
 html,
 body {
   min-height: 100vh;
-  background: var(--color-background-default);
+  // background: var(--color-background-default);
   color: var(--color-text-primary);
 }
 
 h1 {
-  font-size: var(--font-size-xxx-large);
+  font-size: var(--text-xxx-large-font-size);
+  line-height: var(--text-xxx-large-line-height);
+  letter-spacing: calc(var(--text-xxx-large-font-size) * 0.1);
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
 }
