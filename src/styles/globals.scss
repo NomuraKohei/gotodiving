@@ -24,6 +24,11 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: var(--text-xx-large-font-size);
+  line-height: var(--text-xx-large-line-height);
+}
+
 h1,
 h2,
 h3,

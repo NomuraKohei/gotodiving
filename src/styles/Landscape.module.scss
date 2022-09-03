@@ -1,0 +1,21 @@
+.heroHeader {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  > .titleMain {
+    font-size: var(--text-xxx-large-font-size);
+  }
+
+  > span.titleSub {
+    display: block;
+    font-size: initial;
+    font-size: var(--text-medium-font-size);
+  }
+}

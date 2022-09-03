@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 interface Props {
   children: ReactNode;
   title: string;
+  isAnimation?: boolean;
 }
 
 const Layout: React.FC<Props> = (props) => {
@@ -18,8 +19,6 @@ const Layout: React.FC<Props> = (props) => {
     { text: "グルメ", url: "/gourmet" },
   ];
   const router = useRouter();
-
-  console.log(router.asPath);
 
   return (
     <div className={styles.container}>
@@ -72,16 +71,12 @@ const Layout: React.FC<Props> = (props) => {
           content="https://seawater-temperature-data-visualization.vercel.app/"
         />
       </Head>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${props.isAnimation ? styles.headerAnimation : ""}`}>
         <nav aria-label="海の歩き方">
-          <ul role="menubar" aria-label="海の歩き方" className={styles.menubar}>
+          <ul aria-label="海の歩き方" className={styles.menubar}>
             {menu.map((item) => (
-              <li role="none" key={item.text} className={styles.menulist}>
-                <a
-                  role="menuitem"
-                  href={router.asPath === item.url ? undefined : item.url}
-                  aria-current={router.asPath === item.url ? "page" : undefined}
-                >
+              <li key={item.text} className={styles.menulist}>
+                <a href={item.url} aria-current={router.asPath === item.url ? "page" : undefined}>
                   {item.text}
                 </a>
               </li>
