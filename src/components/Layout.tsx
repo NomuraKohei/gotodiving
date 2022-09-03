@@ -3,11 +3,13 @@ import styles from "@styles/Layout.module.scss";
 import React, { ReactNode } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface Props {
   children: ReactNode;
   title: string;
   isAnimation?: boolean;
+  hasBackgroundColor?: boolean;
 }
 
 const Layout: React.FC<Props> = (props) => {
@@ -76,15 +78,17 @@ const Layout: React.FC<Props> = (props) => {
           <ul aria-label="海の歩き方" className={styles.menubar}>
             {menu.map((item) => (
               <li key={item.text} className={styles.menulist}>
-                <a href={item.url} aria-current={router.asPath === item.url ? "page" : undefined}>
-                  {item.text}
-                </a>
+                <Link href={item.url}>
+                  <a aria-current={router.asPath === item.url ? "page" : undefined}>{item.text}</a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
       </header>
-      <main className={styles.main}>{props.children}</main>
+      <main className={`${styles.main} ${props.hasBackgroundColor ? styles.mainBackground : ""}`}>
+        {props.children}
+      </main>
       <footer className={styles.footer}>
         <small>© D214038 Kohei Nomura All right reserved</small>
       </footer>

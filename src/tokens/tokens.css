@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 29 Aug 2022 16:35:00 GMT
+ * Generated on Sat, 03 Sep 2022 04:59:17 GMT
  */
 
 :root {
@@ -24,7 +24,7 @@
   --text-medium-font-family: Hiragino Kaku Gothic Pro;
   --text-medium-font-weight: W6;
   --text-medium-line-height: 200%;
-  --text-medium-font-size: 1em;
+  --text-medium-font-size: 1rem;
   --text-medium-letter-spacing: 10%;
   --text-medium-paragraph-spacing: 0;
   --text-medium-text-case: none;
@@ -78,7 +78,7 @@
   --font-size-4: 48;
   --font-size-5: 72;
   --font-size-small: 0.75rem;
-  --font-size-medium: 1em;
+  --font-size-medium: 1rem;
   --font-size-large: 1.5rem;
   --font-size-x-large: 2.5rem;
   --font-size-xx-large: 3rem;

@@ -102,7 +102,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "1em",
+        "value": "1rem",
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -335,7 +335,7 @@
       "type": "fontSizes"
     },
     "medium": {
-      "value": "1em",
+      "value": "1rem",
       "type": "fontSizes"
     },
     "large": {

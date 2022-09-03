@@ -57,38 +57,6 @@
   }
 }
 
-.arrow {
-  position: absolute;
-  bottom: 40px;
-  left: calc(50% + 16px);
-  font-size: var(--text-small-font-size);
-
-  &::before {
-    content: "";
-    /*絶対配置で下線の位置を決める*/
-    position: absolute;
-    bottom: -14px;
-    left: -20px;
-    /*下線の形状*/
-    width: 1px;
-    height: 40px;
-    background: var(--color-text-primary);
-  }
-
-  &::after {
-    content: "";
-    /*絶対配置で下線の位置を決める*/
-    position: absolute;
-    bottom: -8px;
-    left: -24px;
-    /*下線の形状*/
-    width: 16px;
-    height: 1px;
-    background: var(--color-text-primary);
-    rotate: (-60deg);
-  }
-}
-
 .introduction {
   display: flex;
   flex-direction: column;

@@ -5,6 +5,7 @@ import heroLandscape from "@images/hero-landscape.webp";
 import heroMarineLife from "@images/hero-marinelife.webp";
 import heroEquipment from "@images/hero-equipment.webp";
 import heroGourmet from "@images/hero-gourmet.webp";
+import Link from "next/link";
 
 interface Props {
   defaultPosition: number;
@@ -108,9 +109,11 @@ const Carousel: React.FC<Props> = (props) => {
               }}
             >
               <div className={styles.carouselItem}>
-                <a className={styles.carouselItemInner} href={item.url}>
-                  <Image alt={item.alt} src={item.imageData} layout="fill" />
-                </a>
+                <Link href={item.url}>
+                  <a className={styles.carouselItemInner}>
+                    <Image alt={item.alt} src={item.imageData} layout="fill" />
+                  </a>
+                </Link>
               </div>
               <section className={styles.pageTitle}>
                 <h2>{item.title}</h2>

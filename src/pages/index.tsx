@@ -5,6 +5,7 @@ import styles from "@styles/Home.module.scss";
 import Image from "next/image";
 import bg from "@images/background-top.webp";
 import Carousel from "@/components/Carousel";
+import ScrollArrow from "@/components/ScrollArrow";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
       <section className={styles.heroheader}>
         <h1 className={styles.title}>海の歩き方</h1>
         <p className={styles.subTitle}>スキューバダイビングで海を楽しもう</p>
-        <div className={styles.arrow}>know more</div>
+        <ScrollArrow />
       </section>
       <div className={styles.introduction}>
         <p>ダイビングの楽しみ方は人ぞれぞれ</p>
