@@ -102,11 +102,11 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "1rem",
+        "value": 16,
         "type": "fontSize"
       },
       "letterSpacing": {
-        "value": "10%",
+        "value": "20%",
         "type": "letterSpacing"
       },
       "paragraphSpacing": {
@@ -136,7 +136,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "1.5rem",
+        "value": 24,
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -170,7 +170,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "0.75rem",
+        "value": 12,
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -204,7 +204,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "4.5rem",
+        "value": 72,
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -238,7 +238,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "3rem",
+        "value": 48,
         "type": "fontSize"
       },
       "letterSpacing": {
@@ -272,7 +272,7 @@
         "type": "lineHeight"
       },
       "fontSize": {
-        "value": "2.5rem",
+        "value": 40,
         "type": "fontSize"
       },
       "letterSpacing": {

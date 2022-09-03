@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 03 Sep 2022 04:59:17 GMT
+ * Generated on Sat, 03 Sep 2022 06:07:32 GMT
  */
 
 :root {
@@ -24,15 +24,15 @@
   --text-medium-font-family: Hiragino Kaku Gothic Pro;
   --text-medium-font-weight: W6;
   --text-medium-line-height: 200%;
-  --text-medium-font-size: 1rem;
-  --text-medium-letter-spacing: 10%;
+  --text-medium-font-size: 16;
+  --text-medium-letter-spacing: 20%;
   --text-medium-paragraph-spacing: 0;
   --text-medium-text-case: none;
   --text-medium-text-decoration: none;
   --text-large-font-family: Hiragino Kaku Gothic Pro;
   --text-large-font-weight: W6;
   --text-large-line-height: 150%;
-  --text-large-font-size: 1.5rem;
+  --text-large-font-size: 24;
   --text-large-letter-spacing: 20%;
   --text-large-paragraph-spacing: 0;
   --text-large-text-case: none;
@@ -40,7 +40,7 @@
   --text-small-font-family: Hiragino Kaku Gothic Pro;
   --text-small-font-weight: W3;
   --text-small-line-height: 150%;
-  --text-small-font-size: 0.75rem;
+  --text-small-font-size: 12;
   --text-small-letter-spacing: 5%;
   --text-small-paragraph-spacing: 0;
   --text-small-text-case: none;
@@ -48,7 +48,7 @@
   --text-xxx-large-font-family: Hiragino Kaku Gothic Pro;
   --text-xxx-large-font-weight: W6;
   --text-xxx-large-line-height: 150%;
-  --text-xxx-large-font-size: 4.5rem;
+  --text-xxx-large-font-size: 72;
   --text-xxx-large-letter-spacing: 10%;
   --text-xxx-large-paragraph-spacing: 0;
   --text-xxx-large-text-case: none;
@@ -56,7 +56,7 @@
   --text-xx-large-font-family: Hiragino Kaku Gothic Pro;
   --text-xx-large-font-weight: W6;
   --text-xx-large-line-height: 150%;
-  --text-xx-large-font-size: 3rem;
+  --text-xx-large-font-size: 48;
   --text-xx-large-letter-spacing: 10%;
   --text-xx-large-paragraph-spacing: 0;
   --text-xx-large-text-case: none;
@@ -64,7 +64,7 @@
   --text-x-large-font-family: Hiragino Kaku Gothic Pro;
   --text-x-large-font-weight: W6;
   --text-x-large-line-height: 150%;
-  --text-x-large-font-size: 2.5rem;
+  --text-x-large-font-size: 40;
   --text-x-large-letter-spacing: 10%;
   --text-x-large-paragraph-spacing: 0;
   --text-x-large-text-case: none;

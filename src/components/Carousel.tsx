@@ -21,7 +21,7 @@ const Carousel: React.FC<Props> = (props) => {
     {
       imageData: heroLandscape,
       title: "風景",
-      alt: "崖のような岩礁を下から見上げた画像",
+      alt: "崖のような岩礁を下から見上げた海中風景の画像",
       url: "/landscape",
     },
     {

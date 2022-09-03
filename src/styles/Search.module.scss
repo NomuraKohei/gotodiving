@@ -1,0 +1,33 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.searchRecommendation {
+  display: block;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 640px;
+  background: var(--color-text-primary);
+  border-radius: 40px;
+  font-size: var(--font-size-x-large);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 32px;
+  top: calc(50% - (43px / 2));
+}

@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 40px;
   left: calc(50% + 24px);
-  font-size: var(--text-small-font-size);
+  font-size: var(--font-size-small);
 
   &::before {
     content: "";

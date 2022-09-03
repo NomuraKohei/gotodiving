@@ -18,14 +18,14 @@ body {
 }
 
 h1 {
-  font-size: var(--text-xxx-large-font-size);
+  font-size: var(--font-size-xxx-large);
   line-height: var(--text-xxx-large-line-height);
-  letter-spacing: calc(var(--text-xxx-large-font-size) * 0.1);
+  letter-spacing: calc(var(--font-size-xxx-large) * 0.1);
   margin: 0;
 }
 
 h2 {
-  font-size: var(--text-xx-large-font-size);
+  font-size: var(--font-size-xx-large);
   line-height: var(--text-xx-large-line-height);
 }
 

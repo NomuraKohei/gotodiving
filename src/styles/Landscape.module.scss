@@ -6,18 +6,19 @@
 
 .title {
   position: absolute;
-  left: calc(50% - #{var(--text-xxx-large-font-size)});
-  top: calc(50% - #{var(--text-xxx-large-font-size)});
+  left: calc(50% - #{var(--font-size-xxx-large)});
+  top: calc(50% - #{var(--font-size-xxx-large)});
   text-align: center;
 
   > .titleMain {
-    font-size: var(--text-xxx-large-font-size);
+    font-size: var(--font-size-xxx-large);
     letter-spacing: var(--text-xxx-large-letter-spacing);
   }
 
   > span.titleSub {
     display: block;
-    font-size: var(--text-medium-font-size);
+    font-size: var(--font-size-medium);
+    letter-spacing: var(--text-medium-letter-spacing);
   }
 }
 
@@ -29,14 +30,14 @@
   padding-top: 256px;
 
   > h3 {
-    font-size: var(--text-xx-large-font-size);
+    font-size: var(--font-size-xx-large);
     letter-spacing: var(--text-xx-large-letter-spacing);
     margin-bottom: 80px;
   }
 
   > p {
-    width: calc(#{var(--text-medium-font-size)} * 40);
-    font-size: var(--text-medium-font-size);
+    width: calc(#{var(--font-size-medium)} * 40);
+    font-size: var(--font-size-medium);
     letter-spacing: var(--text-medium-letter-spacing);
     line-height: var(--text-medium-line-height);
     margin-bottom: 120px;

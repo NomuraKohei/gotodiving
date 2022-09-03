@@ -1,0 +1,28 @@
+.heroHeader {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  position: absolute;
+  left: calc(50% - #{var(--font-size-xxx-large)});
+  top: calc(50% - #{var(--font-size-xxx-large)});
+  text-align: center;
+
+  > .titleMain {
+    font-size: var(--font-size-xxx-large);
+    letter-spacing: var(--text-xxx-large-letter-spacing);
+  }
+
+  > span.titleSub {
+    display: block;
+    font-size: var(--font-size-medium);
+    letter-spacing: var(--text-medium-letter-spacing);
+  }
+}
+
+.titleInitialPos {
+  left: initial;
+  top: initial;
+}

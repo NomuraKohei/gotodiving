@@ -4,12 +4,11 @@ import Layout from "src/components/Layout";
 import styles from "@styles/Landscape.module.scss";
 import Image from "next/image";
 import Carousel from "@/components/Carousel";
-import heroLandscape from "@images/hero-landscape.webp";
+import heroMarinelife from "@images/hero-marinelife.webp";
 import Light from "@images/landscape-light.webp";
 import Reef from "@images/landscape-reef.webp";
 import Artifact from "@images/landscape-artifact.webp";
 import HeroHeader from "@/components/HeroHeader";
-import Search from "@/components/Search";
 
 const Landscape: NextPage = () => {
   const sectionItems = [
@@ -39,10 +38,12 @@ const Landscape: NextPage = () => {
   return (
     <Layout title="風景" hasBackgroundColor>
       <HeroHeader
-        title="風景"
+        title="生物"
         titleSub="を楽しむ"
-        image={heroLandscape}
-        alt="崖のような岩礁を下から見上げた海中風景の画像"
+        titlePos={{ left: 160, bottom: 80 }}
+        titleAlignment="left"
+        image={heroMarinelife}
+        alt="赤いソフトコーラルの中心に白いカエルアンコウが下を見ている画像"
       />
       <>
         {sectionItems.map((item, index) => (
@@ -55,7 +56,6 @@ const Landscape: NextPage = () => {
           </section>
         ))}
       </>
-      <Search />
       <Carousel defaultPosition={1} />
     </Layout>
   );
