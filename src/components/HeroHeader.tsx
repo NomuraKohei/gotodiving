@@ -22,7 +22,7 @@ const HeroHeader: React.FC<Props> = (props) => {
 
   return (
     <section className={styles.heroHeader}>
-      <Image src={props.image} alt={props.alt} layout="fill" />
+      <Image src={props.image} alt={props.alt} layout="fill" objectFit="cover" priority />
       <h2
         className={`${styles.title} ${isTitlePos ? styles.titleInitialPos : ""}`}
         style={{

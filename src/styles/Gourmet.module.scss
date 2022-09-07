@@ -1,0 +1,13 @@
+.images {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.image {
+  width: calc(50% - 4%);
+  aspect-ratio: 16/9;
+  position: relative;
+}

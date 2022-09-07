@@ -69,14 +69,18 @@
   },
   "letterSpacing": {
     "0": {
-      "value": "10%",
+      "value": "30%",
       "type": "letterSpacing"
     },
     "1": {
-      "value": "20%",
+      "value": "10%",
       "type": "letterSpacing"
     },
     "2": {
+      "value": "20%",
+      "type": "letterSpacing"
+    },
+    "3": {
       "value": "5%",
       "type": "letterSpacing"
     }
@@ -208,7 +212,7 @@
         "type": "fontSize"
       },
       "letterSpacing": {
-        "value": "10%",
+        "value": "30%",
         "type": "letterSpacing"
       },
       "paragraphSpacing": {
@@ -354,5 +358,16 @@
       "value": "4.5rem",
       "type": "fontSizes"
     }
+  },
+  "searchBox": {
+    "value": {
+      "color": "#00000040",
+      "type": "innerShadow",
+      "x": 0,
+      "y": 4,
+      "blur": 4,
+      "spread": 0
+    },
+    "type": "boxShadow"
   }
 }

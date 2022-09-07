@@ -10,6 +10,7 @@ import Reef from "@images/landscape-reef.webp";
 import Artifact from "@images/landscape-artifact.webp";
 import HeroHeader from "@/components/HeroHeader";
 import Search from "@/components/Search";
+import Section from "@/components/Section";
 
 const Landscape: NextPage = () => {
   const sectionItems = [
@@ -46,17 +47,19 @@ const Landscape: NextPage = () => {
       />
       <>
         {sectionItems.map((item, index) => (
-          <section className={styles.enjoyWay} key={index}>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
+          <Section name={item.title} description={item.description} key={index} isCenter>
             <div className={styles.images}>
               <Image src={item.image} layout="responsive" alt={item.alt} />
             </div>
-          </section>
+          </Section>
+          // <section className={styles.enjoyWay} key={index}>
+          //   <h3>{item.title}</h3>
+          //   <p>{item.description}</p>
+          // </section>
         ))}
       </>
       <Search />
-      <Carousel defaultPosition={1} />
+      <Carousel defaultPosition={2} hiddenText />
     </Layout>
   );
 };

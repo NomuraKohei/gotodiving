@@ -1,0 +1,59 @@
+.enjoyWay {
+  display: flex;
+  justify-content: space-between;
+  padding: 280px 0 0 146px;
+  position: relative;
+}
+
+.enjoyWayReverse {
+  flex-direction: row-reverse;
+  padding: 280px 146px 0 0;
+}
+
+.textContents {
+  z-index: 1;
+  > h3 {
+    font-size: var(--font-size-xx-large);
+    margin-bottom: 48px;
+  }
+
+  > p {
+    width: calc(#{var(--font-size-medium)} * 21);
+    font-size: var(--font-size-medium);
+    letter-spacing: var(--text-medium-letter-spacing);
+    line-height: var(--text-medium-line-height);
+    text-align: justify;
+  }
+}
+
+.enjoyWayCenter {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 256px 0 0 0;
+
+  .textContents {
+    text-align: center;
+
+    > h3 {
+      margin-bottom: 80px;
+    }
+
+    > p {
+      width: calc(#{var(--font-size-medium)} * 40);
+      margin-bottom: 120px;
+    }
+  }
+}
+
+.enjoyWayGourmet {
+  flex-direction: column;
+  padding: 280px 146px 0 146px;
+
+  .textContents {
+    > p {
+      width: 100%;
+    }
+  }
+}

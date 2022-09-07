@@ -1,14 +1,41 @@
 .search {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
 .searchRecommendation {
+  position: relative;
   display: block;
+  height: 64px;
+  width: 640px;
+  margin-bottom: 40px;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 2px;
+    top: 20px;
+
+    background: var(--color-text-primary);
+  }
+
+  &::before {
+    left: 0;
+    rotate: (45deg);
+  }
+
+  &::after {
+    right: 0;
+    rotate: (-45deg);
+  }
 }
 
 .searchBox {
@@ -24,10 +51,22 @@
   color: var(--color-text-secondary);
   text-decoration: none;
   font-weight: bold;
+  box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .searchIcon {
   position: absolute;
-  right: 32px;
-  top: calc(50% - (43px / 2));
+  right: 16px;
+  top: calc(50% - (64px / 2));
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+
+  &:hover {
+    color: #2c86ff;
+  }
 }
