@@ -1,13 +1,13 @@
 /**
  * Do not edit directly
- * Generated on Sat, 03 Sep 2022 09:05:37 GMT
+ * Generated on Wed, 07 Sep 2022 14:10:40 GMT
  */
 
 :root {
   --token-set-order-0: global;
   --color-background-default: #333333;
   --color-background-header: rgba(0, 0, 0, 0.5);
-  --color-background-balloon: rgba(255, 255, 255, 0.3);
+  --color-background-balloon: rgba(0, 0, 0, 0.3);
   --color-text-disabled: #bbbbbb;
   --color-text-primary: #ffffff;
   --color-text-secondary: #333333;

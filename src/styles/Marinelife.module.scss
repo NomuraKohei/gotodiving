@@ -83,11 +83,13 @@
 
 .cite {
   font-size: var(--font-size-small);
+  color: var(--color-text-disabled);
   line-height: 1.1;
 }
 
 .operation {
   font-size: var(--font-size-small);
+  color: var(--color-text-disabled);
   text-align: center;
   margin-top: 16px;
 }

@@ -42,7 +42,7 @@ const Balloon: React.FC<BalloonProps> = (props) => {
         )}
         {props.discoverable && (
           <p>
-            <span className={styles.key}>発見できる場所：</span>
+            <span className={styles.key}>住処：</span>
             {props.discoverable}
           </p>
         )}
@@ -75,6 +75,7 @@ interface LifeImage {
   cite: string[];
   distribution?: React.ReactNode;
   discoverable?: React.ReactNode;
+  videoSrc?: string;
 }
 interface SectionItemProps {
   name: string;
@@ -101,7 +102,11 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
                 left: item.pos.left,
               }}
             >
-              <map name={item.useMapObj.name} className={styles.imageMap}>
+              <map
+                name={item.useMapObj.name}
+                className={styles.imageMap}
+                onClick={() => console.log("a")}
+              >
                 <area shape={item.useMapObj.shape} coords={item.useMapObj.coords} alt={item.name} />
               </map>
               <Image
@@ -182,12 +187,12 @@ const Landscape: NextPage = () => {
           ),
           distribution: (
             <span>
-              海底の砂地<sup>1, 2, 3</sup>
+              南日本、南シナ海<sup>1, 2</sup>
             </span>
           ),
           discoverable: (
             <span>
-              南日本、南シナ海<sup>1, 2</sup>
+              海底の砂地<sup>1, 2, 3</sup>
             </span>
           ),
           width: 374,
@@ -338,14 +343,14 @@ const Landscape: NextPage = () => {
     {
       name: "ヨウジウオ",
       description:
-        "有名なタツノオトシゴはこのヨウジウオ（科）に分類されます。他の生物にはない奇妙な形がポイントです。普段は岩や草かげに隠れており、尻尾をよく海藻に巻きつけています。体調が1cmほどしかないジャパニーズピグミーシーホースは、珍しさからとても人気な生物です。",
+        "有名なタツノオトシゴはこのヨウジウオ（科）に分類されます。他の生物にはない奇妙な形がポイントです。普段は岩や草かげに隠れており、尻尾をよく海藻に巻きつけています。",
       images: [
         {
           src: TatsunoitokoImage,
           name: "タツノイトコ",
           description: (
             <span>
-              海藻に尾を巻きつけている、ヨウジウオ科の魚<sup>1, 2</sup>。
+              海藻に尾を巻きつけている、ヨウジウオ科タツノイトコ属の魚<sup>1, 2</sup>。
             </span>
           ),
           distribution: (
@@ -374,7 +379,7 @@ const Landscape: NextPage = () => {
           name: "オオウミウマ",
           description: (
             <span>
-              大きいものでは20~30cmほどになる<sup>1, 2</sup>
+              ヨウジウオ科のタツノオトシゴ属。大きいものでは20~30cmほどになる<sup>1, 2</sup>
               。体の色は決まっていなく、黄色、焦げ茶、黒、まだら模様など様々である。<sup>2</sup>
             </span>
           ),
@@ -388,15 +393,15 @@ const Landscape: NextPage = () => {
               岩礁の海藻近くや石のある砂底<sup>1, 2</sup>
             </span>
           ),
-          width: 333,
-          height: 222,
-          pos: { bottom: 0, right: 0 },
+          width: 407,
+          height: 397,
+          pos: { bottom: 0, right: -30 },
           cite: [`${citeTemplate1}28`, `${citeTemplate2}77`],
           useMapObj: {
             name: "oumiumaImage",
             shape: "poly",
             coords:
-              "16,132,40,138,134,69,145,82,127,110,130,177,179,209,264,204,329,166,330,126,311,158,267,180,224,151,238,138,191,43,176,23,97,3,66,2,60,27,61,50,38,87,38,87",
+              "51,250,57,268,66,273,76,273,88,274,103,263,138,237,144,241,160,243,162,239,151,236,145,232,150,232,155,231,151,224,158,221,180,209,199,206,212,200,225,203,210,224,196,243,184,261,176,272,166,287,159,304,154,317,143,334,138,341,146,362,154,368,171,366,186,361,218,352,244,345,262,340,287,330,296,328,308,321,312,307,325,302,334,290,332,278,338,260,346,250,355,235,356,224,355,211,365,197,367,190,358,170,355,154,351,153,345,138,343,134,326,125,322,111,320,108,308,98,292,94,290,82,287,73,254,81,242,81,242,75,231,73,231,78,219,79,211,72,207,57,211,51,193,48,185,44,174,47,173,64,173,78,168,84,164,88,152,75,147,73,149,81,147,89,153,101,160,110,153,125,147,136,143,140,135,141,129,134,128,139,131,147,130,160,125,170,123,180,124,193,124,200,120,206,112,211,99,221,94,227,83,233,65,240",
           },
         },
         {
@@ -404,23 +409,24 @@ const Landscape: NextPage = () => {
           name: "ハナタツ",
           description: (
             <span>
-              hoge<sup>1</sup>
+              ハナタツはヨウジウオ科タツノオトシゴ属の魚。タツノオトシゴ属の魚は、細い口からプランクトンを食べたり、オスのお腹で産卵・孵化するいった特徴があります。
+              <sup>1, 2</sup>
             </span>
           ),
           distribution: (
             <span>
-              hoge<sup>1</sup>
+              南日本、朝鮮半島の南部<sup>1, 2</sup>
             </span>
           ),
           discoverable: (
             <span>
-              hoge<sup>1</sup>
+              岩礁の藻場や海藻<sup>2</sup>
             </span>
           ),
           width: 387,
           height: 333,
           pos: { bottom: 0, left: 0 },
-          cite: ["fuga", ""],
+          cite: [`${citeTemplate1}76`, `${citeTemplate2}29`],
           useMapObj: {
             name: "hanatatsuImage",
             shape: "poly",
@@ -443,23 +449,24 @@ const Landscape: NextPage = () => {
           name: "オトヒメエビ",
           description: (
             <span>
-              hoge<sup>1</sup>
+              魚類と共生するエビの一種で、ウツボなどの口内でクリーニング活動を行っています
+              <sup>1</sup>。
             </span>
           ),
           distribution: (
             <span>
-              hoge<sup>1</sup>
+              房総半島以南、インド洋、中・西武太平洋、カリブ海<sup>1, 3</sup>
             </span>
           ),
           discoverable: (
             <span>
-              hoge<sup>1</sup>
+              サンゴ礁や岩礁の穴や影<sup>1</sup>
             </span>
           ),
           width: 343,
           height: 345,
-          pos: { top: 0, left: 0 },
-          cite: ["fuga", ""],
+          pos: { top: 0, left: 50 },
+          cite: [`${citeTemplate1}175`, `${citeTemplate3}37`],
           useMapObj: {
             name: "otohimeebiImage",
             shape: "poly",
@@ -477,18 +484,18 @@ const Landscape: NextPage = () => {
           ),
           distribution: (
             <span>
-              hoge<sup>1</sup>
+              相模湾以南、インド洋、東・中・西武大変用<sup>1, 3</sup>
             </span>
           ),
           discoverable: (
             <span>
-              hoge<sup>1</sup>
+              浅めのサンゴ礁、岩礁<sup>3</sup>
             </span>
           ),
           width: 312,
           height: 278,
           pos: { top: 200, right: 0 },
-          cite: ["fuga", ""],
+          cite: [`${citeTemplate1}175`, `${citeTemplate3}37`],
           useMapObj: {
             name: "furisodeebiImage",
             shape: "poly",
@@ -501,23 +508,24 @@ const Landscape: NextPage = () => {
           name: "イソコンペイトウガニ",
           description: (
             <span>
-              hoge<sup>1</sup>
+              トゲトゲした外見が特徴。海中植物のトゲトサカなどウミトサカ類と共生している
+              <sup>1, 2</sup>。
             </span>
           ),
           distribution: (
             <span>
-              hoge<sup>1</sup>
+              伊豆半島以南、西武太平洋<sup>1, 2</sup>
             </span>
           ),
           discoverable: (
             <span>
-              hoge<sup>1</sup>
+              浅めの岩礁<sup>1, 2</sup>
             </span>
           ),
           width: 454,
           height: 446,
           pos: { bottom: 0, left: 0 },
-          cite: ["fuga", ""],
+          cite: [`${citeTemplate1}180`, `${citeTemplate3}63`],
           useMapObj: {
             name: "isokonpeitouganiImage",
             shape: "poly",
