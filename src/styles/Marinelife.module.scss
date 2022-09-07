@@ -41,13 +41,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
-  height: 300px;
+  width: 300px;
   left: calc(50% - 200px);
-  top: -300px;
+  top: -280px;
   background: var(--color-background-balloon);
   border-radius: 24px;
   padding: 32px;
+  letter-spacing: var(--text-small-letter-spacing);
+  line-height: var(--text-small-line-height);
 
   &::after {
     content: "";
@@ -61,6 +62,10 @@
     border-right: 15px solid transparent;
     border-left: 15px solid transparent;
   }
+
+  &Description {
+    margin-bottom: 2rem;
+  }
 }
 
 .details {
@@ -68,11 +73,17 @@
 
   h4 {
     margin: 0 0 24px 0;
+    font-size: var(--font-size-large);
+  }
+
+  .key {
+    font-weight: bold;
   }
 }
 
 .cite {
   font-size: var(--font-size-small);
+  line-height: 1.1;
 }
 
 .operation {

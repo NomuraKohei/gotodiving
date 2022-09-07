@@ -23,8 +23,10 @@ import Section from "@/components/Section";
 
 interface BalloonProps {
   name: string;
-  description: string;
-  cite: string;
+  distribution?: React.ReactNode;
+  discoverable?: React.ReactNode;
+  description: React.ReactNode;
+  cite: string[];
 }
 
 const Balloon: React.FC<BalloonProps> = (props) => {
@@ -32,10 +34,31 @@ const Balloon: React.FC<BalloonProps> = (props) => {
     <section className={styles.balloon}>
       <div className={styles.details}>
         <h4>{props.name}</h4>
-        <p>{props.description}</p>
+        {props.distribution && (
+          <p>
+            <span className={styles.key}>分布：</span>
+            {props.distribution}
+          </p>
+        )}
+        {props.discoverable && (
+          <p>
+            <span className={styles.key}>発見できる場所：</span>
+            {props.discoverable}
+          </p>
+        )}
+        <p className={styles.balloonDescription}>
+          <span className={styles.key}>特徴：</span>
+          {props.description}
+        </p>
       </div>
       <p className={styles.cite}>
-        引用：<cite>{props.cite}</cite>
+        <span>参考文献：</span>
+        {props.cite.map((item, index) => (
+          <cite key={index}>
+            {index > 0 ? "," : ""}
+            {item}
+          </cite>
+        ))}
       </p>
     </section>
   );
@@ -47,9 +70,11 @@ interface LifeImage {
   width: number;
   height: number;
   pos: { top?: number; right?: number; bottom?: number; left?: number };
-  description: string;
-  cite: string;
+  description: React.ReactNode;
   useMapObj: { name: string; shape: string; coords: string };
+  cite: string[];
+  distribution?: React.ReactNode;
+  discoverable?: React.ReactNode;
 }
 interface SectionItemProps {
   name: string;
@@ -86,7 +111,13 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
                 height={item.height}
                 useMap={`#${item.useMapObj.name}`}
               />
-              <Balloon name={item.name} description={item.description} cite={item.cite} />
+              <Balloon
+                name={item.name}
+                distribution={item.distribution}
+                discoverable={item.discoverable}
+                description={item.description}
+                cite={item.cite}
+              />
             </div>
           ))}
         </div>
@@ -97,6 +128,12 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
 };
 
 const Landscape: NextPage = () => {
+  const citeTemplate1 =
+    "[1] 海中生物図鑑―ダイバー・スノーケラーのための、誠文堂新光社、小林安雅、2005年8月1日、p";
+  const citeTemplate2 =
+    "[2] 山溪ハンディ図鑑　改訂版　日本の海水魚、山と溪谷社、吉野雄輔、2018年9月17日、p";
+  const citeTemplate3 = "[3] 海洋生物ガイドブック、東海大学出版会、益田一、1999年3月20日、p";
+
   const sectionItems: SectionItemProps[] = [
     // サメ
     {
@@ -107,11 +144,26 @@ const Landscape: NextPage = () => {
         {
           src: ShirowaniImage,
           name: "シロワニ",
-          description: "hoge",
+          description: (
+            <span>
+              2.5m<sup>1</sup>にもなる大型のサメの一種。特徴は鋭い歯だが、見かけほど凶暴ではない
+              <sup>2</sup>。写真は、小笠原の父島で撮影したもので、暗い岩穴で観測した。
+            </span>
+          ),
           width: 756,
           height: 248,
           pos: { top: 0, right: -100 },
-          cite: "fuga",
+          distribution: (
+            <span>
+              世界の温帯・熱帯の海域<sup>1, 2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              主に岩穴<sup>1, 2</sup>
+            </span>
+          ),
+          cite: [`${citeTemplate1}16`, `${citeTemplate2}19`],
           useMapObj: {
             name: "shirowaniImage",
             shape: "poly",
@@ -122,11 +174,26 @@ const Landscape: NextPage = () => {
         {
           src: SakataImage,
           name: "サカタザメ",
-          description: "hoge",
+          description: (
+            <span>
+              昼は砂底に潜っているサメ。と思いきや実はエイの仲間である<sup>1</sup>
+              。伊豆半島の大瀬崎や伊豆海洋公園で観測できる。
+            </span>
+          ),
+          distribution: (
+            <span>
+              海底の砂地<sup>1, 2, 3</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              南日本、南シナ海<sup>1, 2</sup>
+            </span>
+          ),
           width: 374,
           height: 161,
           pos: { bottom: 0, left: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate1}16`, `${citeTemplate2}24`, `${citeTemplate3}163`],
           useMapObj: {
             name: "sakatazameImage",
             shape: "poly",
@@ -137,11 +204,27 @@ const Landscape: NextPage = () => {
         {
           src: NemuribukaImage,
           name: "ネムリブカ",
-          description: "hoge",
+          description: (
+            <span>
+              性格はおとなしく<sup>2</sup>
+              、第一背びれと尾びれの先端が白くなっていることが特徴<sup>2, 3</sup>
+              。写真は小笠原諸島の父島で観測したもの。
+            </span>
+          ),
+          distribution: (
+            <span>
+              インド洋・太平洋のサンゴ礁のある海域<sup>2, 3</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              岩穴やサンゴ礁の下<sup>2, 3</sup>
+            </span>
+          ),
           width: 453,
           height: 282,
           pos: { bottom: 0, right: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate2}20`, `${citeTemplate3}162`],
           useMapObj: {
             name: "nemuribukaImage",
             shape: "poly",
@@ -160,11 +243,27 @@ const Landscape: NextPage = () => {
         {
           src: TotautusboImage,
           name: "トラウツボ",
-          description: "hoge",
+          description: (
+            <span>
+              オレンジ色の体と白い斑点が特徴。また、突き出た鼻孔がチャームポイントである。顎は湾曲しているため完全に閉じることは出来ない
+              <sup>1</sup>。
+            </span>
+          ),
+          distribution: (
+            <span>
+              南日本、インド・太平洋<sup>1, 2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              主に沿岸の浅瀬における岩礁<sup>1</sup>
+            </span>
+          ),
+
           width: 456,
           height: 273,
           pos: { top: 0, left: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate1}18`, `${citeTemplate2}30-31`],
           useMapObj: {
             name: "totautusboImage",
             shape: "poly",
@@ -175,11 +274,27 @@ const Landscape: NextPage = () => {
         {
           src: HanagigeutsuboImage,
           name: "ハナヒゲウツボ",
-          description: "hoge",
+          description: (
+            <span>
+              生育具合で色の変わる魚で、幼魚のときは黒と黄、成魚のときは青と黄になる
+              <sup>1, 2, 3</sup>
+              。常に口を開けているが、威嚇しているわけではなく呼吸しているだけである<sup>2</sup>。
+            </span>
+          ),
+          distribution: (
+            <span>
+              和歌山県以南の太平洋<sup>2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              砂礫（砂や小石）底や岩礁の穴<sup>1, 2, 3</sup>
+            </span>
+          ),
           width: 413,
           height: 356,
           pos: { top: 50, right: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate1}18`, `${citeTemplate2}29`, `${citeTemplate3}165`],
           useMapObj: {
             name: "hanagigeutsuboImage",
             shape: "poly",
@@ -190,11 +305,25 @@ const Landscape: NextPage = () => {
         {
           src: NisegoishiutsuboImage,
           name: "ニセゴイシウツボ",
-          description: "hoge",
+          description: (
+            <span>
+              体中や口の中まで黒点があることが特徴で、ウツボの中では大型である。<sup>2</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              八丈島、南日本の太平洋、インド洋や西太平洋<sup>2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              岩礁の穴<sup>2</sup>
+            </span>
+          ),
           width: 416,
           height: 350,
           pos: { bottom: 0, left: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate2}33`],
           useMapObj: {
             name: "nisegoishiutsuboImage",
             shape: "poly",
@@ -209,16 +338,30 @@ const Landscape: NextPage = () => {
     {
       name: "ヨウジウオ",
       description:
-        "タツノオトシゴは、他の生物にはない奇妙な形がポイントです。普段は岩や草かげに隠れており、尻尾をよく海藻に巻きつけています。タツノオトシゴもやはり種によって色や形が様々です。中には、対象が1cmほどしかないジャパニーズピグミーシーホースは、珍しさや見つけずらさからとても人気な生物です。",
+        "有名なタツノオトシゴはこのヨウジウオ（科）に分類されます。他の生物にはない奇妙な形がポイントです。普段は岩や草かげに隠れており、尻尾をよく海藻に巻きつけています。体調が1cmほどしかないジャパニーズピグミーシーホースは、珍しさからとても人気な生物です。",
       images: [
         {
           src: TatsunoitokoImage,
           name: "タツノイトコ",
-          description: "hoge",
+          description: (
+            <span>
+              海藻に尾を巻きつけている、ヨウジウオ科の魚<sup>1, 2</sup>。
+            </span>
+          ),
+          distribution: (
+            <span>
+              南日本の太平洋、インド・太平洋<sup>1, 2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              岩礁、小石、砂底の海藻<sup>1, 2</sup>
+            </span>
+          ),
           width: 631,
           height: 169,
           pos: { top: 0, right: -50 },
-          cite: "fuga",
+          cite: [`${citeTemplate1}29`, `${citeTemplate2}75`],
           useMapObj: {
             name: "tatsunoitokoImage",
             shape: "poly",
@@ -229,11 +372,26 @@ const Landscape: NextPage = () => {
         {
           src: OumiumaImage,
           name: "オオウミウマ",
-          description: "hoge",
+          description: (
+            <span>
+              大きいものでは20~30cmほどになる<sup>1, 2</sup>
+              。体の色は決まっていなく、黄色、焦げ茶、黒、まだら模様など様々である。<sup>2</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              南日本の太平洋や伊豆半島以南<sup>1, 2</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              岩礁の海藻近くや石のある砂底<sup>1, 2</sup>
+            </span>
+          ),
           width: 333,
           height: 222,
           pos: { bottom: 0, right: 0 },
-          cite: "fuga",
+          cite: [`${citeTemplate1}28`, `${citeTemplate2}77`],
           useMapObj: {
             name: "oumiumaImage",
             shape: "poly",
@@ -244,11 +402,25 @@ const Landscape: NextPage = () => {
         {
           src: HanatatsuImage,
           name: "ハナタツ",
-          description: "hoge",
+          description: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
           width: 387,
           height: 333,
           pos: { bottom: 0, left: 0 },
-          cite: "fuga",
+          cite: ["fuga", ""],
           useMapObj: {
             name: "hanatatsuImage",
             shape: "poly",
@@ -269,11 +441,25 @@ const Landscape: NextPage = () => {
         {
           src: OtohimeebiImage,
           name: "オトヒメエビ",
-          description: "hoge",
+          description: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
           width: 343,
           height: 345,
           pos: { top: 0, left: 0 },
-          cite: "fuga",
+          cite: ["fuga", ""],
           useMapObj: {
             name: "otohimeebiImage",
             shape: "poly",
@@ -284,11 +470,25 @@ const Landscape: NextPage = () => {
         {
           src: FurisodeebiImage,
           name: "フリソデエビ",
-          description: "hoge",
+          description: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
           width: 312,
           height: 278,
           pos: { top: 200, right: 0 },
-          cite: "fuga",
+          cite: ["fuga", ""],
           useMapObj: {
             name: "furisodeebiImage",
             shape: "poly",
@@ -299,11 +499,25 @@ const Landscape: NextPage = () => {
         {
           src: isokonpeitouganiImage,
           name: "イソコンペイトウガニ",
-          description: "hoge",
+          description: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          distribution: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
+          discoverable: (
+            <span>
+              hoge<sup>1</sup>
+            </span>
+          ),
           width: 454,
           height: 446,
           pos: { bottom: 0, left: 0 },
-          cite: "fuga",
+          cite: ["fuga", ""],
           useMapObj: {
             name: "isokonpeitouganiImage",
             shape: "poly",
