@@ -19,10 +19,39 @@
     display: block;
     font-size: var(--font-size-medium);
     letter-spacing: var(--text-medium-letter-spacing);
+    margin-left: 8px;
   }
 }
 
 .titleInitialPos {
   left: initial;
   top: initial;
+}
+
+.titleMarineLife {
+  left: 240px;
+  bottom: 160px;
+
+  @media screen and (max-width: 904px) {
+    left: 4vw;
+    bottom: 4vh;
+  }
+}
+
+.titleEquipment {
+  right: 160px;
+  top: 240px;
+
+  @media screen and (max-width: 904px) {
+    right: 4vw;
+    top: 12vh;
+  }
+}
+
+.titleGourmet {
+  left: 160px;
+  top: calc(50% - 144px);
+  @media screen and (max-width: 904px) {
+    left: 4vw;
+  }
 }

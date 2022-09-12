@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Marinelife.module.scss";
@@ -18,8 +18,10 @@ import OumiumaImage from "@images/marinlife/oumiuma.webp";
 import OtohimeebiImage from "@images/marinlife/otohimeebi.webp";
 import FurisodeebiImage from "@images/marinlife/furisodeebi.webp";
 import isokonpeitouganiImage from "@images/marinlife/isokonpeitougani.webp";
+import playIcon from "@images/play.svg";
 import Search from "@/components/Search";
 import Section from "@/components/Section";
+import Modal from "@/components/Modal";
 
 interface BalloonProps {
   name: string;
@@ -27,11 +29,13 @@ interface BalloonProps {
   discoverable?: React.ReactNode;
   description: React.ReactNode;
   cite: string[];
+  isShow?: boolean;
+  closeLifeDescription?: () => void;
 }
 
 const Balloon: React.FC<BalloonProps> = (props) => {
   return (
-    <section className={styles.balloon}>
+    <section className={`${styles.balloon} ${props.isShow ? styles.balloonShowSP : ""}`}>
       <div className={styles.details}>
         <h4>{props.name}</h4>
         {props.distribution && (
@@ -60,6 +64,11 @@ const Balloon: React.FC<BalloonProps> = (props) => {
           </cite>
         ))}
       </p>
+      {props.isShow && (
+        <button className={styles.close} onClick={props.closeLifeDescription}>
+          close
+        </button>
+      )}
     </section>
   );
 };
@@ -84,6 +93,8 @@ interface SectionItemProps {
   width?: number;
   images: LifeImage[];
   isReverse?: boolean;
+  toggleModalOpen?: (videoSrc: string) => void;
+  toggleDescriptionOpen?: (data: BalloonProps) => void;
 }
 
 const SectionItem: React.FC<SectionItemProps> = (props) => {
@@ -105,7 +116,18 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
               <map
                 name={item.useMapObj.name}
                 className={styles.imageMap}
-                onClick={() => console.log("a")}
+                onClick={() => {
+                  if (!props.toggleDescriptionOpen) {
+                    return;
+                  }
+                  props.toggleDescriptionOpen({
+                    name: item.name,
+                    distribution: item.distribution,
+                    discoverable: item.discoverable,
+                    description: item.description,
+                    cite: item.cite,
+                  });
+                }}
               >
                 <area shape={item.useMapObj.shape} coords={item.useMapObj.coords} alt={item.name} />
               </map>
@@ -116,6 +138,20 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
                 height={item.height}
                 useMap={`#${item.useMapObj.name}`}
               />
+              {item.videoSrc && props.toggleModalOpen && (
+                <button
+                  className={styles.play}
+                  onClick={() => {
+                    if (!props.toggleModalOpen || !item.videoSrc) {
+                      return;
+                    }
+                    props.toggleModalOpen(item.videoSrc);
+                  }}
+                >
+                  <Image src={playIcon} alt="play" />
+                  <p className={styles.playtext}>動画を再生</p>
+                </button>
+              )}
               <Balloon
                 name={item.name}
                 distribution={item.distribution}
@@ -133,6 +169,29 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
 };
 
 const Landscape: NextPage = () => {
+  const [toggleVideoModal, setToggleVideoModal] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState("");
+  const toggleModalOpen = (videoSrc: string) => {
+    setCurrentVideo(videoSrc);
+    setToggleVideoModal(true);
+  };
+  const toggleModaClose = () => {
+    setToggleVideoModal(false);
+  };
+
+  const [isMapClicked, setIsMapClicked] = useState(false);
+  const [currentLifeData, setCurrentLifeData] = useState<BalloonProps | undefined>(undefined);
+
+  const openBaloon = (data: BalloonProps) => {
+    setIsMapClicked(true);
+    setCurrentLifeData(data);
+  };
+
+  const closeBaloon = () => {
+    setIsMapClicked(false);
+    setCurrentLifeData(undefined);
+  };
+
   const citeTemplate1 =
     "[1] 海中生物図鑑―ダイバー・スノーケラーのための、誠文堂新光社、小林安雅、2005年8月1日、p";
   const citeTemplate2 =
@@ -169,6 +228,8 @@ const Landscape: NextPage = () => {
             </span>
           ),
           cite: [`${citeTemplate1}16`, `${citeTemplate2}19`],
+          videoSrc:
+            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605138/shirowani_hidarr.webm",
           useMapObj: {
             name: "shirowaniImage",
             shape: "poly",
@@ -299,6 +360,8 @@ const Landscape: NextPage = () => {
           width: 413,
           height: 356,
           pos: { top: 50, right: 0 },
+          videoSrc:
+            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605637/hanahigeutsubo_kxa4sb.webm",
           cite: [`${citeTemplate1}18`, `${citeTemplate2}29`, `${citeTemplate3}165`],
           useMapObj: {
             name: "hanagigeutsuboImage",
@@ -397,6 +460,8 @@ const Landscape: NextPage = () => {
           height: 397,
           pos: { bottom: 0, right: -30 },
           cite: [`${citeTemplate1}28`, `${citeTemplate2}77`],
+          videoSrc:
+            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605637/oumiuma_wlzo5d.webm",
           useMapObj: {
             name: "oumiumaImage",
             shape: "poly",
@@ -442,7 +507,7 @@ const Landscape: NextPage = () => {
       description:
         "一般的に身近な伊勢海老やタラバガニのような大型な種だけではなく、小型で特徴的なエビ・カニを発見できることはダイビングならではです。奇妙な歩き方をするフリソデエビは、ダイバーにとても人気です。基本的には、物陰に隠れているので見つけづらいですが、その分見つけがいがあるといえるでしょう。",
       height: 700,
-      width: 600,
+      width: undefined,
       images: [
         {
           src: OtohimeebiImage,
@@ -465,8 +530,10 @@ const Landscape: NextPage = () => {
           ),
           width: 343,
           height: 345,
-          pos: { top: 0, left: 50 },
+          pos: { top: 0, left: 0 },
           cite: [`${citeTemplate1}175`, `${citeTemplate3}37`],
+          videoSrc:
+            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605638/otohimeebi_rpr2sh.webm",
           useMapObj: {
             name: "otohimeebiImage",
             shape: "poly",
@@ -479,7 +546,7 @@ const Landscape: NextPage = () => {
           name: "フリソデエビ",
           description: (
             <span>
-              hoge<sup>1</sup>
+              主にヒトデを食べます<sup>1</sup>。
             </span>
           ),
           distribution: (
@@ -524,7 +591,7 @@ const Landscape: NextPage = () => {
           ),
           width: 454,
           height: 446,
-          pos: { bottom: 0, left: 0 },
+          pos: { bottom: 0, left: 100 },
           cite: [`${citeTemplate1}180`, `${citeTemplate3}63`],
           useMapObj: {
             name: "isokonpeitouganiImage",
@@ -543,10 +610,10 @@ const Landscape: NextPage = () => {
       <HeroHeader
         title="生物"
         titleSub="を楽しむ"
-        titlePos={{ left: 240, bottom: 160 }}
         titleAlignment="left"
         image={heroMarinelife}
         alt="赤いソフトコーラルの中心に白いカエルアンコウが下を見ている画像"
+        type="marineLife"
       />
       {sectionItems.map((item, index) => (
         <SectionItem
@@ -557,6 +624,8 @@ const Landscape: NextPage = () => {
           images={item.images}
           isReverse={item.isReverse}
           key={index}
+          toggleModalOpen={toggleModalOpen}
+          toggleDescriptionOpen={openBaloon}
         />
       ))}
       <Search
@@ -564,6 +633,10 @@ const Landscape: NextPage = () => {
         link="https://www.google.co.jp/search?q=%E3%83%80%E3%82%A4%E3%83%93%E3%83%B3%E3%82%B0%E3%80%80%E7%94%9F%E7%89%A9&sxsrf=ALiCzsZ7qYDneXe6wcfS_Ud3gDSffHzJGQ%3A1662293739899&source=hp&ei=65YUY82lNKLLmAXis4TwAw&iflsig=AJiK0e8AAAAAYxSk-7I4TzkWW_q1Yzk1_r2H7CesZMpG&ved=0ahUKEwiNx4Hfjvv5AhWiJaYKHeIZAT4Q4dUDCAk&uact=5&oq=%E3%83%80%E3%82%A4%E3%83%93%E3%83%B3%E3%82%B0%E3%80%80%E7%94%9F%E7%89%A9&gs_lcp=Cgdnd3Mtd2l6EANQiQNYjR9giSFoAHAAeACAAQCIAQCSAQCYAQCgAQGwAQA&sclient=gws-wiz"
       />
       <Carousel defaultPosition={3} hiddenText />
+      {toggleVideoModal && <Modal currentVideo={currentVideo} toggleModaClose={toggleModaClose} />}
+      {isMapClicked && currentLifeData && (
+        <Balloon {...currentLifeData} isShow={isMapClicked} closeLifeDescription={closeBaloon} />
+      )}
     </Layout>
   );
 };

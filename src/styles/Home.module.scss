@@ -5,7 +5,15 @@
   overflow: hidden;
   z-index: -1;
   filter: brightness(60%);
-  animation: animation 3s forwards;
+
+  @media screen and (min-width: 905px) {
+    animation: animation 3s forwards;
+  }
+
+  @media screen and (max-width: 905px) {
+    position: fixed;
+    height: 100vh;
+  }
 }
 
 @keyframes animation {
@@ -28,6 +36,10 @@
   height: 100vh;
   position: relative;
   animation: transparentAnimation 1s backwards 3s;
+
+  @media screen and (max-width: 904px) {
+    animation: transparentAnimation 1s backwards 0.5s;
+  }
 }
 
 @keyframes transparentAnimation {
@@ -42,11 +54,30 @@
 
 .title {
   margin-bottom: 24px;
+
+  @media screen and (max-width: 904px) {
+    font-size: var(--font-size-xx-large);
+  }
 }
 
 .subTitle {
   margin-bottom: 80px;
   letter-spacing: 7px;
+
+  @media screen and (max-width: 904px) {
+    width: 276px;
+    letter-spacing: 9px;
+    text-align: center;
+    line-height: var(--text-medium-line-height);
+  }
+}
+
+.newLine {
+  display: none;
+
+  @media screen and (max-width: 904px) {
+    display: block;
+  }
 }
 
 .icon {
@@ -62,13 +93,28 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  font-weight: bold;
-  letter-spacing: var(--text-medium-letter-spacing);
+  letter-spacing: 0.2rem;
 
   p:first-child {
-    font-size: var(--text-large-font-size);
-    letter-spacing: var(--text-large-letter-spacing);
+    font-size: var(--font-size-large);
     margin: 240px 0 320px;
+
+    @media screen and (max-width: 904px) {
+      font-size: var(--font-size-medium);
+    }
+  }
+
+  .accent {
+    font-size: var(--font-size-large);
+    letter-spacing: 0.5rem;
+    margin-left: 0.1em;
+
+    @media screen and (max-width: 904px) {
+      font-size: var(--font-size-medium);
+      letter-spacing: 0.2rem;
+      margin-left: initial;
+      font-weight: bold;
+    }
   }
 
   $fibonacciNumbers: (
@@ -81,8 +127,13 @@
   @each $index, $number in $fibonacciNumbers {
     p:nth-child(#{$index}) {
       margin-bottom: calc(#{$number * 80}px + 160px);
-      margin-left: calc(#{$index % 2} * 80px);
-      margin-right: calc(-1 * (#{$index % 2} - 1) * 80px);
+      margin-left: calc(#{$index % 2} * 88px);
+      margin-right: calc(-1 * (#{$index % 2} - 1) * 88px);
+
+      @media screen and (max-width: 904px) {
+        margin-left: calc(#{$index % 2} * 8px);
+        margin-right: calc(-1 * (#{$index % 2} - 1) * 8px);
+      }
     }
   }
 }

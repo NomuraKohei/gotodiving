@@ -82,10 +82,10 @@ const Equipment: NextPage = () => {
       <HeroHeader
         title="グルメ"
         titleSub="を楽しむ"
-        titlePos={{ left: 160, top: windowHeight / 2 - 144 }}
         titleAlignment="left"
         image={heroGourmet}
         alt="夕焼けをバックにイカや貝を食べる画像"
+        type="gourmet"
       />
       {equipments.map((item, index) => (
         <Section
@@ -95,24 +95,26 @@ const Equipment: NextPage = () => {
           key={index}
           isGourmet
         >
-          <div className={styles.images}>
-            <div className={styles.image}>
-              <Image
-                src={item.image}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                layout="fill"
-              />
-            </div>
-            <div className={styles.image}>
-              <Image
-                src={item.image2}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                layout="fill"
-              />
+          <div className={styles.imagesWrapper}>
+            <div className={styles.images}>
+              <div className={styles.image}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  layout="fill"
+                />
+              </div>
+              <div className={styles.image}>
+                <Image
+                  src={item.image2}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  layout="fill"
+                />
+              </div>
             </div>
           </div>
         </Section>

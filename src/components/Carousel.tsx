@@ -1,5 +1,5 @@
 import styles from "@styles/Carousel.module.scss";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import heroLandscape from "@images/hero-landscape.webp";
 import heroMarineLife from "@images/hero-marinelife.webp";
@@ -104,9 +104,12 @@ const Carousel: React.FC<Props> = (props) => {
                 index !== currentSlideNum - 1 ? styles.disable : ""
               }`}
               style={{
-                transform: `translate3d(${
-                  (pageWidth - CAROUSEL_ITEM_MAX_WIDTH) / 2 - scrollAmount
-                }px,0,${index !== currentSlideNum - 1 ? "-200px" : "0"})`,
+                transform:
+                  pageWidth >= 904
+                    ? `translate3d(${
+                        (pageWidth - CAROUSEL_ITEM_MAX_WIDTH) / 2 - scrollAmount
+                      }px,0,${index !== currentSlideNum - 1 ? "-200px" : "0"})`
+                    : undefined,
               }}
             >
               <div className={styles.carouselItem}>

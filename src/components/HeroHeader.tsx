@@ -8,28 +8,23 @@ interface Props {
   alt: string;
   title: string;
   titleSub: string;
-  titlePos?: { top?: number; right?: number; bottom?: number; left?: number };
   titleAlignment?: "left" | "right";
+  type?: "marineLife" | "equipment" | "gourmet";
 }
 
 const HeroHeader: React.FC<Props> = (props) => {
-  const isTitlePos = !!(
-    props.titlePos?.top ||
-    props.titlePos?.right ||
-    props.titlePos?.bottom ||
-    props.titlePos?.left
-  );
+  const isTitlePos = !!props.type;
 
   return (
     <section className={styles.heroHeader}>
       <Image src={props.image} alt={props.alt} layout="fill" objectFit="cover" priority />
       <h2
-        className={`${styles.title} ${isTitlePos ? styles.titleInitialPos : ""}`}
+        className={`${styles.title} ${isTitlePos ? styles.titleInitialPos : ""}  ${
+          isTitlePos ? styles.titleInitialPos : ""
+        } ${props.type === "marineLife" ? styles.titleMarineLife : ""} ${
+          props.type === "equipment" ? styles.titleEquipment : ""
+        } ${props.type === "gourmet" ? styles.titleGourmet : ""}`}
         style={{
-          top: props.titlePos?.top || undefined,
-          right: props.titlePos?.right || undefined,
-          bottom: props.titlePos?.bottom || undefined,
-          left: props.titlePos?.left || undefined,
           textAlign: props.titleAlignment || undefined,
         }}
       >

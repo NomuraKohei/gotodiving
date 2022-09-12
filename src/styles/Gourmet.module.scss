@@ -1,13 +1,42 @@
+.imagesWrapper {
+  width: 100%;
+
+  @media screen and (max-width: 904px) {
+    overflow-x: hidden;
+  }
+}
+
 .images {
   display: flex;
   position: relative;
   justify-content: space-between;
   width: 100%;
   margin-top: 80px;
+
+  @media screen and (max-width: 904px) {
+    gap: 4vw;
+    padding: 0 4vw;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0 4vw;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    margin-top: 40px;
+  }
 }
 
 .image {
   width: calc(50% - 4%);
   aspect-ratio: 16/9;
   position: relative;
+
+  @media screen and (max-width: 1239px) {
+    width: calc(50% - 2%);
+  }
+
+  @media screen and (max-width: 904px) {
+    flex: none;
+    width: 85vw;
+    scroll-snap-align: center;
+  }
 }

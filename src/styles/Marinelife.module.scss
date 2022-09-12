@@ -2,12 +2,27 @@
   position: relative;
   width: 700px;
   height: 500px;
+
+  @media screen and (max-width: 1239px) {
+    width: 700px;
+  }
+
+  @media screen and (max-width: 904px) {
+    width: 100%;
+    overflow-x: scroll;
+    margin-top: 24px;
+  }
 }
 
 .images {
   position: relative;
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 904px) {
+    width: 700px;
+    height: calc(100% - 29.8px);
+  }
 }
 
 .image {
@@ -32,6 +47,39 @@
 
   .imageMap:hover ~ .balloon {
     display: flex;
+
+    @media screen and (max-width: 904px) {
+      display: none;
+    }
+  }
+
+  .play {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    .playtext {
+      opacity: 0;
+      margin-top: 8px;
+      font-size: var(--font-size-small);
+      color: var(--color-text-primary);
+    }
+
+    &:hover {
+      .playtext {
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 904px) {
+      .playtext {
+        opacity: 0.8;
+      }
+    }
   }
 }
 
@@ -66,6 +114,25 @@
   &Description {
     margin-bottom: 2rem;
   }
+
+  @media screen and (max-width: 904px) {
+    &ShowSP {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 96px 4vw 16px;
+      box-sizing: border-box;
+      z-index: 99;
+      border-radius: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 .details {
@@ -92,4 +159,35 @@
   color: var(--color-text-disabled);
   text-align: center;
   margin-top: 16px;
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 56px;
+  height: 56px;
+  background: var(--color-background-balloon);
+  border-radius: 50%;
+  border: 2px solid var(--color-text-primary);
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 25px;
+    background: var(--color-text-primary);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
 }

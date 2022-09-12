@@ -10,6 +10,8 @@ interface SectionProps {
   height?: number;
   isCenter?: boolean;
   isGourmet?: boolean;
+  isFlexStartSP?: boolean;
+  disbleTopPadding?: boolean;
 }
 
 const Section: React.FC<SectionProps> = (props) => {
@@ -17,7 +19,9 @@ const Section: React.FC<SectionProps> = (props) => {
     <section
       className={`${styles.enjoyWay} ${props.isReverse ? styles.enjoyWayReverse : ""} ${
         props.isCenter ? styles.enjoyWayCenter : ""
-      } ${props.isGourmet ? styles.enjoyWayGourmet : ""}`}
+      } ${props.isGourmet ? styles.enjoyWayGourmet : ""} ${
+        props.isFlexStartSP ? styles.enjoyWayFlexStartSP : ""
+      } ${props.disbleTopPadding ? styles.enjoyWayDisableTopPadding : ""}`}
       style={{ height: props.height }}
     >
       <div className={styles.textContents}>

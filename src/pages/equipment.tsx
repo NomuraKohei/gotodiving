@@ -65,10 +65,10 @@ const Equipment: NextPage = () => {
       <HeroHeader
         title="装備"
         titleSub="を楽しむ"
-        titlePos={{ right: 160, top: 240 }}
         titleAlignment="right"
         image={heroEquipment}
         alt="ウェットスーツなどのダイビングに必要な装備を着て泳ぐ人の画像"
+        type="equipment"
       />
       {equipments.map((item, index) => (
         <Section
@@ -77,8 +77,10 @@ const Equipment: NextPage = () => {
           key={index}
           height={item.height}
           isReverse={item.isReverse}
+          disbleTopPadding={index ? true : false}
+          isFlexStartSP
         >
-          <div className={styles.equipment} style={{ left: (windowWidth - item.width) / 2 }}>
+          <div className={styles.equipment}>
             <Image src={item.image} alt={item.alt} width={item.width} height={item.height} />
           </div>
         </Section>

@@ -27,3 +27,19 @@
     rotate: (-60deg);
   }
 }
+
+.arrowTopHeader {
+  @media screen and (max-width: 904px) {
+    animation: transparentAnimation 1s backwards 1.5s;
+  }
+
+  @keyframes transparentAnimation {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

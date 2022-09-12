@@ -4,6 +4,7 @@
   height: 48px;
   width: 100%;
   background: var(--color-background-header);
+  backdrop-filter: blur(3px);
 
   ul,
   li,
@@ -13,11 +14,15 @@
   }
 
   a {
-    padding: 16px;
+    padding: 16px 24px;
     box-sizing: border-box;
     display: block;
     color: var(--color-text-disabled);
     text-decoration: none;
+
+    @media screen and (max-width: 904px) {
+      padding: 16px;
+    }
 
     &:hover {
       background: rgba(255, 255, 255, 0.2);
@@ -26,6 +31,10 @@
 
   &Animation {
     animation: transparentAnimation 1s backwards 3s;
+
+    @media screen and (max-width: 904px) {
+      animation: transparentAnimation 1s backwards 1.5s;
+    }
   }
 }
 
@@ -44,6 +53,11 @@
   height: 100%;
   padding: 0 24px;
   box-sizing: border-box;
+  justify-content: center;
+
+  @media screen and (max-width: 904px) {
+    padding: 0;
+  }
 }
 
 .menulist {

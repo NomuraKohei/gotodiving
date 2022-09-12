@@ -21,15 +21,27 @@ const Home: NextPage = () => {
       </div>
       <section className={styles.heroheader}>
         <h1 className={styles.title}>海の歩き方</h1>
-        <p className={styles.subTitle}>スキューバダイビングで海を楽しもう</p>
-        <ScrollArrow />
+        <p className={styles.subTitle}>
+          スキューバダイビングで
+          <br className={styles.newLine} />
+          海を楽しもう
+        </p>
+        <ScrollArrow isTopHeader />
       </section>
       <div className={styles.introduction}>
-        <p>ダイビングの楽しみ方は人ぞれぞれ</p>
-        <p>幻想的な海中風景を見て感動する？</p>
-        <p>個性的な水中生物たちを観察する?</p>
-        <p>かっこいい装備を集めて冒険する？</p>
-        <p>海鮮グルメを楽しみにしながらダイビングする？</p>
+        <p>ダイビングの楽しみ方は人それぞれ</p>
+        <p>
+          幻想的な<span className={styles.accent}>海中風景</span>を見て感動する？
+        </p>
+        <p>
+          個性的な<span className={styles.accent}>水中生物</span>たちを観察する?
+        </p>
+        <p>
+          かっこいい<span className={styles.accent}>装備</span>を集めて冒険する？
+        </p>
+        <p>
+          ダイビング後の<span className={styles.accent}>海鮮グルメ</span>を楽しむ？
+        </p>
       </div>
       <Carousel defaultPosition={1} />
     </Layout>

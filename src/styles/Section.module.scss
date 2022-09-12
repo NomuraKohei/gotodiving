@@ -1,20 +1,70 @@
+$basic-padding: 200px;
+$tab-padding: 96px;
+
 .enjoyWay {
   display: flex;
   justify-content: space-between;
-  padding: 280px 0 0 146px;
+  padding: 280px 0 0 $basic-padding;
   position: relative;
+
+  @media screen and (max-width: 1239px) {
+    flex-direction: column;
+    padding: 280px 0 0 $tab-padding;
+    align-items: flex-end;
+  }
+
+  @media screen and (max-width: 904px) {
+    padding: 128px 0 0 0;
+  }
 }
 
 .enjoyWayReverse {
   flex-direction: row-reverse;
-  padding: 280px 146px 0 0;
+  padding: 280px $basic-padding 0 0;
+
+  @media screen and (max-width: 1239px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 280px $tab-padding 0 0;
+  }
+
+  @media screen and (max-width: 904px) {
+    padding: 128px 0 0 0;
+  }
+
+  .textContents {
+    @media screen and (max-width: 1239px) {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
+}
+
+.enjoyWayDisableTopPadding {
+  padding-top: 0;
 }
 
 .textContents {
   z-index: 1;
+
+  @media screen and (max-width: 904px) {
+    padding: 0 4vw;
+    box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 1239px) {
+    width: 100%;
+  }
+
   > h3 {
     font-size: var(--font-size-xx-large);
     margin-bottom: 48px;
+    width: calc(var(--font-size-medium) * 21);
+
+    @media screen and (max-width: 904px) {
+      width: 100%;
+    }
   }
 
   > p {
@@ -23,6 +73,10 @@
     letter-spacing: var(--text-medium-letter-spacing);
     line-height: var(--text-medium-line-height);
     text-align: justify;
+
+    @media screen and (max-width: 904px) {
+      width: 100%;
+    }
   }
 }
 
@@ -33,27 +87,70 @@
   width: 100%;
   padding: 256px 0 0 0;
 
+  @media screen and (max-width: 904px) {
+    padding: 128px 0 0 0;
+  }
+
   .textContents {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 904px) {
+      padding: 0;
+    }
 
     > h3 {
       margin-bottom: 80px;
+
+      @media screen and (max-width: 904px) {
+        margin-bottom: 48px;
+        font-size: var(--font-size-x-large);
+      }
     }
 
     > p {
       width: calc(#{var(--font-size-medium)} * 40);
       margin-bottom: 120px;
+
+      @media screen and (max-width: 904px) {
+        width: 100%;
+        padding: 0 4vw;
+        margin-bottom: 40px;
+        box-sizing: border-box;
+      }
     }
   }
 }
 
 .enjoyWayGourmet {
   flex-direction: column;
-  padding: 280px 146px 0 146px;
+  padding: 280px $basic-padding 0 $basic-padding;
+
+  @media screen and (max-width: 1239px) {
+    padding: 280px $tab-padding 0 $tab-padding;
+  }
+
+  @media screen and (max-width: 904px) {
+    padding: 128px 0 0 0;
+  }
 
   .textContents {
+    > h3 {
+      @media screen and (max-width: 904px) {
+        font-size: var(--font-size-x-large);
+      }
+    }
+
     > p {
       width: 100%;
     }
+  }
+}
+
+.enjoyWayFlexStartSP {
+  @media screen and (max-width: 904px) {
+    align-items: flex-start;
   }
 }
