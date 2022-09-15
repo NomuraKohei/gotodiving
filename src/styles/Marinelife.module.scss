@@ -127,10 +127,22 @@
       box-sizing: border-box;
       z-index: 99;
       border-radius: 0;
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      -ms-overflow-style: none; /* IE, Edge 対応 */
+      scrollbar-width: none; /* Firefox 対応 */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       &::after {
         display: none;
       }
+    }
+    .baloonInner {
+      height: calc(100% + 1px);
+      width: 100%;
     }
   }
 }

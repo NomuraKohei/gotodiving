@@ -104,6 +104,7 @@ const Equipment: NextPage = () => {
                   width={item.width}
                   height={item.height}
                   layout="fill"
+                  priority
                 />
               </div>
               <div className={styles.image}>
@@ -113,6 +114,7 @@ const Equipment: NextPage = () => {
                   width={item.width}
                   height={item.height}
                   layout="fill"
+                  priority
                 />
               </div>
             </div>

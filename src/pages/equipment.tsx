@@ -81,7 +81,13 @@ const Equipment: NextPage = () => {
           isFlexStartSP
         >
           <div className={styles.equipment}>
-            <Image src={item.image} alt={item.alt} width={item.width} height={item.height} />
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={item.width}
+              height={item.height}
+              priority
+            />
           </div>
         </Section>
       ))}
@@ -90,7 +96,7 @@ const Equipment: NextPage = () => {
         description="装備はいろいろあります。ウェットスーツに追加し、体を保護するためのフードベストや手袋、タンクを背負い息をすうためのBCDやレギュレータ、海をさらに楽しむためのカメラやダイブコンピュータなど。"
         isCenter
       >
-        <Image src={equipmentsImage} alt="様々なダイビング器材" />
+        <Image src={equipmentsImage} alt="様々なダイビング器材" priority />
       </Section>
       <Search
         text="装備"

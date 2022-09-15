@@ -74,7 +74,7 @@ const Landscape: NextPage = () => {
           <Section name={item.title} description={item.description} key={index} isCenter>
             <div className={styles.imagesWrapper}>
               <div className={styles.images}>
-                <Image src={item.image} layout="responsive" alt={item.alt} />
+                <Image src={item.image} layout="responsive" alt={item.alt} priority />
                 <button
                   className={`${styles.button} ${
                     item.videoInfo.position === "topMiddle"

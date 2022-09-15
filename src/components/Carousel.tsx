@@ -115,7 +115,7 @@ const Carousel: React.FC<Props> = (props) => {
               <div className={styles.carouselItem}>
                 <Link href={item.url}>
                   <a className={styles.carouselItemInner}>
-                    <Image alt={item.alt} src={item.imageData} layout="fill" />
+                    <Image alt={item.alt} src={item.imageData} layout="fill" priority />
                   </a>
                 </Link>
               </div>

@@ -36,39 +36,41 @@ interface BalloonProps {
 const Balloon: React.FC<BalloonProps> = (props) => {
   return (
     <section className={`${styles.balloon} ${props.isShow ? styles.balloonShowSP : ""}`}>
-      <div className={styles.details}>
-        <h4>{props.name}</h4>
-        {props.distribution && (
-          <p>
-            <span className={styles.key}>分布：</span>
-            {props.distribution}
+      <div className={styles.baloonInner}>
+        <div className={styles.details}>
+          <h4>{props.name}</h4>
+          {props.distribution && (
+            <p>
+              <span className={styles.key}>分布：</span>
+              {props.distribution}
+            </p>
+          )}
+          {props.discoverable && (
+            <p>
+              <span className={styles.key}>住処：</span>
+              {props.discoverable}
+            </p>
+          )}
+          <p className={styles.balloonDescription}>
+            <span className={styles.key}>特徴：</span>
+            {props.description}
           </p>
-        )}
-        {props.discoverable && (
-          <p>
-            <span className={styles.key}>住処：</span>
-            {props.discoverable}
-          </p>
-        )}
-        <p className={styles.balloonDescription}>
-          <span className={styles.key}>特徴：</span>
-          {props.description}
+        </div>
+        <p className={styles.cite}>
+          <span>参考文献：</span>
+          {props.cite.map((item, index) => (
+            <cite key={index}>
+              {index > 0 ? "," : ""}
+              {item}
+            </cite>
+          ))}
         </p>
+        {props.isShow && (
+          <button className={styles.close} onClick={props.closeLifeDescription}>
+            close
+          </button>
+        )}
       </div>
-      <p className={styles.cite}>
-        <span>参考文献：</span>
-        {props.cite.map((item, index) => (
-          <cite key={index}>
-            {index > 0 ? "," : ""}
-            {item}
-          </cite>
-        ))}
-      </p>
-      {props.isShow && (
-        <button className={styles.close} onClick={props.closeLifeDescription}>
-          close
-        </button>
-      )}
     </section>
   );
 };
@@ -137,6 +139,7 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
                 width={item.width}
                 height={item.height}
                 useMap={`#${item.useMapObj.name}`}
+                priority
               />
               {item.videoSrc && props.toggleModalOpen && (
                 <button
