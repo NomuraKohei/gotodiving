@@ -14,6 +14,10 @@
     position: fixed;
     height: 100vh;
   }
+
+  &NonAnimetion {
+    animation: none;
+  }
 }
 
 @keyframes animation {
@@ -39,6 +43,10 @@
 
   @media screen and (max-width: 904px) {
     animation: transparentAnimation 1s backwards 0.5s;
+  }
+
+  &NonAnimation {
+    animation: none;
   }
 }
 

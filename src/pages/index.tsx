@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Home.module.scss";
@@ -6,11 +6,35 @@ import Image from "next/image";
 import bg from "@images/background-top.webp";
 import Carousel from "@/components/Carousel";
 import ScrollArrow from "@/components/ScrollArrow";
+import { AnimationState } from "./_app";
 
 const Home: NextPage = () => {
+  const { isTopAnimation, setTopAnimation } = useContext(AnimationState);
+
+  const disableAnimation = useCallback(() => {
+    if (!setTopAnimation) {
+      return;
+    }
+    if (!isTopAnimation) {
+      return;
+    }
+    setTopAnimation(false);
+  }, [setTopAnimation, isTopAnimation]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", disableAnimation);
+    return () => {
+      window.removeEventListener("scroll", disableAnimation);
+    };
+  }, [disableAnimation]);
+
   return (
     <Layout title="トップ" isAnimation>
-      <div className={styles.backgroundWrapper}>
+      <div
+        className={`${styles.backgroundWrapper} ${
+          isTopAnimation ? "" : styles.backgroundWrapperNonAnimetion
+        }`}
+      >
         <Image
           alt="この背景画像は、宮古島の魔王の宮殿というポイント"
           src={bg}
@@ -19,7 +43,9 @@ const Home: NextPage = () => {
           priority
         />
       </div>
-      <section className={styles.heroheader}>
+      <section
+        className={`${styles.heroheader} ${isTopAnimation ? "" : styles.heroheaderNonAnimation}`}
+      >
         <h1 className={styles.title}>海の歩き方</h1>
         <p className={styles.subTitle}>
           スキューバダイビングで

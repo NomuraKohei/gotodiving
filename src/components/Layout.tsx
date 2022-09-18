@@ -1,9 +1,10 @@
 import Head from "next/head";
 import styles from "@styles/Layout.module.scss";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useContext } from "react";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { AnimationState } from "@/pages/_app";
 
 interface Props {
   children: ReactNode;
@@ -21,6 +22,7 @@ const Layout: React.FC<Props> = (props) => {
     { text: "グルメ", url: "/gourmet" },
   ];
   const router = useRouter();
+  const { isTopAnimation } = useContext(AnimationState);
 
   return (
     <div className={styles.container}>
@@ -61,7 +63,11 @@ const Layout: React.FC<Props> = (props) => {
         <meta name="twitter:image" content="https://gotodiving.vercel.app/ogp.jpg" />
         <meta name="twitter:url" content="https://gotodiving.vercel.app/" />
       </Head>
-      <header className={`${styles.header} ${props.isAnimation ? styles.headerAnimation : ""}`}>
+      <header
+        className={`${styles.header} ${
+          props.isAnimation ? (isTopAnimation ? styles.headerAnimation : "") : ""
+        }`}
+      >
         <nav aria-label="海の歩き方">
           <ul aria-label="海の歩き方" className={styles.menubar}>
             {menu.map((item) => (
