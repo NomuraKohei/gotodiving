@@ -40,38 +40,26 @@ const Layout: React.FC<Props> = (props) => {
         <title>{props.title === "トップ" ? "海の歩き方" : `海の歩き方 | ${props.title}`}</title>
         <meta
           name="description"
-          content="2002年から2020年までの月毎の海水温の平均をビジュアライズした。"
+          content="ダイビング楽しみ方はなにか？ダイビングは何が楽しいのか？それを発見するためのWebサイト「海の歩き方」"
         />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="Seawater Temperature Data Visualization" />
+        <meta property="og:title" content="海の歩き方" />
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ"
+          content="ダイビング楽しみ方はなにか？ダイビングは何が楽しいのか？それを発見するためのWebサイト「海の歩き方」"
         />
-        <meta
-          property="og:url"
-          content="https://seawater-temperature-data-visualization.vercel.app/"
-        />
-        <meta
-          property="og:image"
-          content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg"
-        />
-        <meta property="og:site_name" content="Seawater Temperature Data Visualization" />
+        <meta property="og:url" content="https://gotodiving.vercel.app/" />
+        <meta property="og:image" content="https://gotodiving.vercel.app/ogp.jpg" />
+        <meta property="og:site_name" content="海の歩き方" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Seawater Temperature Data Visualization" />
+        <meta name="twitter:title" content="海の歩き方" />
         <meta
           name="twitter:description"
-          content="日本全国で測定された海水温のデータを収集し、１ヶ月の平均水温を年と月毎にビジュアライズ"
+          content="ダイビング楽しみ方はなにか？ダイビングは何が楽しいのか？それを発見するためのWebサイト「海の歩き方」"
         />
-        <meta
-          name="twitter:image"
-          content="https://seawater-temperature-data-visualization.vercel.app/ogp.jpg"
-        />
-        <meta
-          name="twitter:url"
-          content="https://seawater-temperature-data-visualization.vercel.app/"
-        />
+        <meta name="twitter:image" content="https://gotodiving.vercel.app/ogp.jpg" />
+        <meta name="twitter:url" content="https://gotodiving.vercel.app/" />
       </Head>
       <header className={`${styles.header} ${props.isAnimation ? styles.headerAnimation : ""}`}>
         <nav aria-label="海の歩き方">
