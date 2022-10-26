@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Equipment.module.scss";
-import Image from "next/image";
+// import Image from "next/image";
 import Carousel from "@/components/Carousel";
-import maskImage from "@images/equipment/mask.webp";
-import wetsuitsImage from "@images/equipment/wetsuits.webp";
-import finImage from "@images/equipment/fin.webp";
-import equipmentsImage from "@images/equipment/equipments.webp";
-import heroEquipment from "@images/hero-equipment.webp";
+const maskImage = "./equipment/mask.webp";
+const wetsuitsImage = "./equipment/wetsuits.webp";
+const finImage = "./equipment/fin.webp";
+const equipmentsImage = "./equipment/equipments.webp";
+const heroEquipment = "./hero-equipment.webp";
+// import maskImage from "@images/equipment/mask.webp";
+// import wetsuitsImage from "@images/equipment/wetsuits.webp";
+// import finImage from "@images/equipment/fin.webp";
+// import equipmentsImage from "@images/equipment/equipments.webp";
+// import heroEquipment from "@images/hero-equipment.webp";
 
 import HeroHeader from "@/components/HeroHeader";
 import Search from "@/components/Search";
@@ -81,13 +86,7 @@ const Equipment: NextPage = () => {
           isFlexStartSP
         >
           <div className={styles.equipment}>
-            <Image
-              src={item.image}
-              alt={item.alt}
-              width={item.width}
-              height={item.height}
-              priority
-            />
+            <img src={item.image} alt={item.alt} width={item.width} height={item.height} />
           </div>
         </Section>
       ))}
@@ -96,7 +95,7 @@ const Equipment: NextPage = () => {
         description="装備はいろいろあります。ウェットスーツに追加し、体を保護するためのフードベストや手袋、タンクを背負い息をすうためのBCDやレギュレータ、海をさらに楽しむためのカメラやダイブコンピュータなど。"
         isCenter
       >
-        <Image src={equipmentsImage} alt="様々なダイビング器材" priority />
+        <img src={equipmentsImage} alt="様々なダイビング器材" className={styles.equipment__img} />
       </Section>
       <Search
         text="装備"

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "@styles/HeroHeader.module.scss";
-import Image, { StaticImageData } from "next/image";
+// import Image, { StaticImageData } from "next/image";
 import ScrollArrow from "./ScrollArrow";
 
 interface Props {
-  image: StaticImageData;
+  image: string;
   alt: string;
   title: string;
   titleSub: string;
@@ -17,7 +17,14 @@ const HeroHeader: React.FC<Props> = (props) => {
 
   return (
     <section className={styles.heroHeader}>
-      <Image src={props.image} alt={props.alt} layout="fill" objectFit="cover" priority />
+      <img
+        src={props.image}
+        alt={props.alt}
+        style={{ objectFit: "cover", width: "100%", height: "100%" }}
+        // layout="fill"
+        // objectFit="cover"
+        // priority
+      />
       <h2
         className={`${styles.title} ${isTitlePos ? styles.titleInitialPos : ""}  ${
           isTitlePos ? styles.titleInitialPos : ""

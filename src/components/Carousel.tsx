@@ -1,11 +1,11 @@
 import styles from "@styles/Carousel.module.scss";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import heroLandscape from "@images/hero-landscape.webp";
-import heroMarineLife from "@images/hero-marinelife.webp";
-import heroEquipment from "@images/hero-equipment.webp";
-import heroGourmet from "@images/hero-gourmet.webp";
-import Link from "next/link";
+// import Image from "next/image";
+const heroLandscape = "./hero-landscape.webp";
+const heroMarineLife = "./hero-marinelife.webp";
+const heroEquipment = "./hero-equipment.webp";
+const heroGourmet = "./hero-gourmet.webp";
+// import Link from "next/link";
 
 interface Props {
   defaultPosition: number;
@@ -23,25 +23,25 @@ const Carousel: React.FC<Props> = (props) => {
       imageData: heroLandscape,
       title: "風景",
       alt: "崖のような岩礁を下から見上げた海中風景の画像",
-      url: "/landscape",
+      url: "landscape.html",
     },
     {
       imageData: heroMarineLife,
       title: "生物",
       alt: "赤いソフトコーラルの中心に白いカエルアンコウが下を見ている画像",
-      url: "/marinelife",
+      url: "marinelife.html",
     },
     {
       imageData: heroEquipment,
       title: "装備",
       alt: "ウェットスーツなどのダイビングに必要な装備を着て泳ぐ人の画像",
-      url: "/equipment",
+      url: "equipment.html",
     },
     {
       imageData: heroGourmet,
       title: "グルメ",
       alt: "夕焼けをバックにイカや貝を食べる画像",
-      url: "/gourmet",
+      url: "gourmet.html",
     },
   ];
 
@@ -113,11 +113,14 @@ const Carousel: React.FC<Props> = (props) => {
               }}
             >
               <div className={styles.carouselItem}>
-                <Link href={item.url}>
-                  <a className={styles.carouselItemInner}>
-                    <Image alt={item.alt} src={item.imageData} layout="fill" priority />
-                  </a>
-                </Link>
+                <a className={styles.carouselItemInner} href={item.url}>
+                  <img
+                    alt={item.alt}
+                    src={item.imageData}
+                    style={{ width: "100%" }}
+                    // layout="fill"
+                  />
+                </a>
               </div>
               <section className={styles.pageTitle}>
                 <h2>{item.title}</h2>

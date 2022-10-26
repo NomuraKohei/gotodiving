@@ -2,8 +2,7 @@ import React, { useCallback, useContext, useEffect } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Home.module.scss";
-import Image from "next/image";
-import bg from "@images/background-top.webp";
+const bg = "./background-top.webp";
 import Carousel from "@/components/Carousel";
 import ScrollArrow from "@/components/ScrollArrow";
 import { AnimationState } from "./_app";
@@ -35,12 +34,12 @@ const Home: NextPage = () => {
           isTopAnimation ? "" : styles.backgroundWrapperNonAnimetion
         }`}
       >
-        <Image
+        <img
           alt="この背景画像は、宮古島の魔王の宮殿というポイント"
           src={bg}
-          layout="fill"
-          objectFit="cover"
-          priority
+          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          // layout="fill"
+          // objectFit="cover"
         />
       </div>
       <section

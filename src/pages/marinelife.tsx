@@ -2,23 +2,25 @@ import React, { useState } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Marinelife.module.scss";
-import Image, { StaticImageData } from "next/image";
+// import Image, { StaticImageData } from "next/image";
 import Carousel from "@/components/Carousel";
-import heroMarinelife from "@images/hero-marinelife.webp";
 import HeroHeader from "@/components/HeroHeader";
-import ShirowaniImage from "@images/marinlife/shirowani.webp";
-import SakataImage from "@images/marinlife/sakatazame.webp";
-import NemuribukaImage from "@images/marinlife/nemuribuka.webp";
-import TotautusboImage from "@images/marinlife/torautsubo.webp";
-import HanagigeutsuboImage from "@images/marinlife/hanahigeutsubo.webp";
-import NisegoishiutsuboImage from "@images/marinlife/nisegoishiutsubo.webp";
-import TatsunoitokoImage from "@images/marinlife/tatsunoitoko.webp";
-import HanatatsuImage from "@images/marinlife/hanatatsu.webp";
-import OumiumaImage from "@images/marinlife/oumiuma.webp";
-import OtohimeebiImage from "@images/marinlife/otohimeebi.webp";
-import FurisodeebiImage from "@images/marinlife/furisodeebi.webp";
-import isokonpeitouganiImage from "@images/marinlife/isokonpeitougani.webp";
-import playIcon from "@images/play.svg";
+
+const heroMarinelife = "./hero-marinelife.webp";
+const ShirowaniImage = "./marinlife/shirowani.webp";
+const SakataImage = "./marinlife/sakatazame.webp";
+const NemuribukaImage = "./marinlife/nemuribuka.webp";
+const TotautusboImage = "./marinlife/torautsubo.webp";
+const HanagigeutsuboImage = "./marinlife/hanahigeutsubo.webp";
+const NisegoishiutsuboImage = "./marinlife/nisegoishiutsubo.webp";
+const TatsunoitokoImage = "./marinlife/tatsunoitoko.webp";
+const HanatatsuImage = "./marinlife/hanatatsu.webp";
+const OumiumaImage = "./marinlife/oumiuma.webp";
+const OtohimeebiImage = "./marinlife/otohimeebi.webp";
+const FurisodeebiImage = "./marinlife/furisodeebi.webp";
+const isokonpeitouganiImage = "./marinlife/isokonpeitougani.webp";
+const playIcon = "./play.svg";
+
 import Search from "@/components/Search";
 import Section from "@/components/Section";
 import Modal from "@/components/Modal";
@@ -76,7 +78,7 @@ const Balloon: React.FC<BalloonProps> = (props) => {
 };
 
 interface LifeImage {
-  src: StaticImageData;
+  src: string;
   name: string;
   width: number;
   height: number;
@@ -133,13 +135,12 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
               >
                 <area shape={item.useMapObj.shape} coords={item.useMapObj.coords} alt={item.name} />
               </map>
-              <Image
+              <img
                 src={item.src}
                 alt={item.name}
                 width={item.width}
                 height={item.height}
                 useMap={`#${item.useMapObj.name}`}
-                priority
               />
               {item.videoSrc && props.toggleModalOpen && (
                 <button
@@ -151,7 +152,7 @@ const SectionItem: React.FC<SectionItemProps> = (props) => {
                     props.toggleModalOpen(item.videoSrc);
                   }}
                 >
-                  <Image src={playIcon} alt="play" />
+                  <img src={playIcon} alt="play" />
                   <p className={styles.playtext}>動画を再生</p>
                 </button>
               )}
@@ -231,8 +232,7 @@ const Landscape: NextPage = () => {
             </span>
           ),
           cite: [`${citeTemplate1}16`, `${citeTemplate2}19`],
-          videoSrc:
-            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605138/shirowani_hidarr.webm",
+          videoSrc: "./shirowani_hidarr.webm",
           useMapObj: {
             name: "shirowaniImage",
             shape: "poly",
@@ -363,8 +363,7 @@ const Landscape: NextPage = () => {
           width: 413,
           height: 356,
           pos: { top: 50, right: 0 },
-          videoSrc:
-            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605637/hanahigeutsubo_kxa4sb.webm",
+          videoSrc: "./hanahigeutsubo_kxa4sb.webm",
           cite: [`${citeTemplate1}18`, `${citeTemplate2}29`, `${citeTemplate3}165`],
           useMapObj: {
             name: "hanagigeutsuboImage",
@@ -463,8 +462,7 @@ const Landscape: NextPage = () => {
           height: 397,
           pos: { bottom: 0, right: -30 },
           cite: [`${citeTemplate1}28`, `${citeTemplate2}77`],
-          videoSrc:
-            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605637/oumiuma_wlzo5d.webm",
+          videoSrc: "./oumiuma_wlzo5d.webm",
           useMapObj: {
             name: "oumiumaImage",
             shape: "poly",
@@ -535,8 +533,7 @@ const Landscape: NextPage = () => {
           height: 345,
           pos: { top: 0, left: 0 },
           cite: [`${citeTemplate1}175`, `${citeTemplate3}37`],
-          videoSrc:
-            "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605638/otohimeebi_rpr2sh.webm",
+          videoSrc: "./otohimeebi_rpr2sh.webm",
           useMapObj: {
             name: "otohimeebiImage",
             shape: "poly",

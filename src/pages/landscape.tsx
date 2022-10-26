@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Landscape.module.scss";
-import Image from "next/image";
+// import Image from "next/image";
 import Carousel from "@/components/Carousel";
-import heroLandscape from "@images/hero-landscape.webp";
-import Light from "@images/landscape-light.webp";
-import Reef from "@images/landscape-reef.webp";
-import Artifact from "@images/landscape-artifact.webp";
+
+const heroLandscape = "./hero-landscape.webp";
+const Light = "./landscape-light.webp";
+const Reef = "./landscape-reef.webp";
+const Artifact = "./landscape-artifact.webp";
+
 import HeroHeader from "@/components/HeroHeader";
 import Search from "@/components/Search";
 import Section from "@/components/Section";
-import playIcon from "@images/play.svg";
+const playIcon = "./play.svg";
 import Modal from "@/components/Modal";
 
 const Landscape: NextPage = () => {
@@ -33,7 +35,7 @@ const Landscape: NextPage = () => {
       image: Light,
       alt: "６枚の光の美しい海中風景の画像",
       videoInfo: {
-        src: "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605638/light_k7ggyq.webm",
+        src: "./light_k7ggyq.webm",
         position: "topMiddle",
       },
     },
@@ -44,7 +46,7 @@ const Landscape: NextPage = () => {
       image: Reef,
       alt: "６枚のダイナミックな岩礁が写った海中風景の画像",
       videoInfo: {
-        src: "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605641/gansho_cnglbk.webm",
+        src: "./gansho_cnglbk.webm",
         position: "topMiddle",
       },
     },
@@ -55,7 +57,7 @@ const Landscape: NextPage = () => {
       image: Artifact,
       alt: "６枚の風化した人工物が写った海中風景の画像",
       videoInfo: {
-        src: "https://res.cloudinary.com/dyrk122qi/video/upload/v1662605637/artifact_hbk1lh.webm",
+        src: "./artifact_hbk1lh.webm",
         position: "bottomLeft",
       },
     },
@@ -74,7 +76,12 @@ const Landscape: NextPage = () => {
           <Section name={item.title} description={item.description} key={index} isCenter>
             <div className={styles.imagesWrapper}>
               <div className={styles.images}>
-                <Image src={item.image} layout="responsive" alt={item.alt} priority />
+                <img
+                  src={item.image}
+                  // layout="responsive"
+                  alt={item.alt}
+                  style={{ width: "100%" }}
+                />
                 <button
                   className={`${styles.button} ${
                     item.videoInfo.position === "topMiddle"
@@ -83,7 +90,7 @@ const Landscape: NextPage = () => {
                   }`}
                   onClick={() => toggleModalOpen(item.videoInfo.src)}
                 >
-                  <Image src={playIcon} alt="再生アイコン" />
+                  <img src={playIcon} alt="再生アイコン" />
                   <p className={styles.playtext}>動画を再生</p>
                 </button>
               </div>

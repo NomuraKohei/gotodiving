@@ -15,11 +15,11 @@ interface Props {
 
 const Layout: React.FC<Props> = (props) => {
   const menu = [
-    { text: "トップ", url: "/" },
-    { text: "風景", url: "/landscape" },
-    { text: "生物", url: "/marinelife" },
-    { text: "装備", url: "/equipment" },
-    { text: "グルメ", url: "/gourmet" },
+    { text: "トップ", url: "index.html" },
+    { text: "風景", url: "landscape.html" },
+    { text: "生物", url: "marinelife.html" },
+    { text: "装備", url: "equipment.html" },
+    { text: "グルメ", url: "gourmet.html" },
   ];
   const router = useRouter();
   const { isTopAnimation } = useContext(AnimationState);
@@ -44,7 +44,7 @@ const Layout: React.FC<Props> = (props) => {
           name="description"
           content="ダイビング楽しみ方はなにか？ダイビングは何が楽しいのか？それを発見するためのWebサイト「海の歩き方」"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="./favicon.ico" />
         <meta property="og:title" content="海の歩き方" />
         <meta property="og:type" content="website" />
         <meta
@@ -72,9 +72,9 @@ const Layout: React.FC<Props> = (props) => {
           <ul aria-label="海の歩き方" className={styles.menubar}>
             {menu.map((item) => (
               <li key={item.text} className={styles.menulist}>
-                <Link href={item.url}>
-                  <a aria-current={router.asPath === item.url ? "page" : undefined}>{item.text}</a>
-                </Link>
+                <a href={item.url} aria-current={router.asPath === item.url ? "page" : undefined}>
+                  {item.text}
+                </a>
               </li>
             ))}
           </ul>

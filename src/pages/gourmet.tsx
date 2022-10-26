@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { NextPage } from "next/types";
 import Layout from "src/components/Layout";
 import styles from "@styles/Gourmet.module.scss";
-import Image from "next/image";
+// import Image from "next/image";
 import Carousel from "@/components/Carousel";
-import heroGourmet from "@images/hero-gourmet.webp";
-import kaisendonUmasouImage from "@images/gourmet/kaisendon-umaso.webp";
-import kaisendonWithAosaImage from "@images/gourmet/kaisendon-withaosa.webp";
-import tendonGoldImage from "@images/gourmet/tendon-gold.webp";
-import tendonAnagoImage from "@images/gourmet/tendon-anago.webp";
-import sushiOneImage from "@images/gourmet/sushi-one.webp";
-import sushiTableImage from "@images/gourmet/sushi-table.webp";
-import sashimiNanikaImage from "@images/gourmet/sashimi-nanika.webp";
-import sashimiTableImage from "@images/gourmet/sashimi-tai.webp";
+
+const heroGourmet = "./hero-gourmet.webp";
+const kaisendonUmasouImage = "./gourmet/kaisendon-umaso.webp";
+const kaisendonWithAosaImage = "./gourmet/kaisendon-withaosa.webp";
+const tendonGoldImage = "./gourmet/tendon-gold.webp";
+const tendonAnagoImage = "./gourmet/tendon-anago.webp";
+const sushiOneImage = "./gourmet/sushi-one.webp";
+const sushiTableImage = "./gourmet/sushi-table.webp";
+const sashimiNanikaImage = "./gourmet/sashimi-nanika.webp";
+const sashimiTableImage = "./gourmet/sashimi-tai.webp";
+
 import HeroHeader from "@/components/HeroHeader";
 import Search from "@/components/Search";
 import Section from "@/components/Section";
@@ -98,23 +100,23 @@ const Equipment: NextPage = () => {
           <div className={styles.imagesWrapper}>
             <div className={styles.images}>
               <div className={styles.image}>
-                <Image
+                <img
                   src={item.image}
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
-                  layout="fill"
-                  priority
+                  style={{ width: "100%", height: "100%" }}
+                  // layout="fill"
                 />
               </div>
               <div className={styles.image}>
-                <Image
+                <img
                   src={item.image2}
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
-                  layout="fill"
-                  priority
+                  style={{ width: "100%", height: "100%" }}
+                  // layout="fill"
                 />
               </div>
             </div>

@@ -7,15 +7,27 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "token-gen": "./node_modules/.bin/token-transformer src/tokens/tokens.json src/tokens/output.json --expandTypography && style-dictionary build --config style-dictionary.config.json"
+    "token-gen": "./node_modules/.bin/token-transformer src/tokens/tokens.json src/tokens/output.json --expandTypography && style-dictionary build --config style-dictionary.config.json",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "image-trace-loader": "^1.0.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "jimp": "^0.16.2",
+    "lqip-loader": "^2.2.1",
     "next": "12.2.5",
+    "next-optimized-images": "^2.6.2",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "responsive-loader": "^3.1.1",
     "sass": "^1.54.5",
-    "token-transformer": "^0.0.25"
+    "svg-sprite-loader": "^6.0.11",
+    "token-transformer": "^0.0.25",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "18.7.13",
