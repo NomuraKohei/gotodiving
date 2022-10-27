@@ -84,7 +84,7 @@ const Layout: React.FC<Props> = (props) => {
         {props.children}
       </main>
       <footer className={styles.footer}>
-        <small>© D214038 Kohei Nomura All right reserved</small>
+        <small>© Nomura All right reserved</small>
       </footer>
     </div>
   );
