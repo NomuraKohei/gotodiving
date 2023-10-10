@@ -9,9 +9,9 @@
 .images {
   display: flex;
   position: relative;
-  justify-content: space-between;
   width: 100%;
   margin-top: 80px;
+  gap: 16px;
 
   @media screen and (max-width: 904px) {
     gap: 4vw;
