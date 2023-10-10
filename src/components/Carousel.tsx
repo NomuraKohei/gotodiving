@@ -75,7 +75,13 @@ const Carousel: React.FC<Props> = (props) => {
 
   return (
     <section className={styles.carouselWrap}>
-      {!props.hiddenText && <p className={styles.question}>あなたは一番、何を楽しみたい？</p>}
+      {!props.hiddenText && (
+        <p className={styles.question}>
+          あなたは一番
+          <br />
+          何を楽しみたい？
+        </p>
+      )}
       <div className={styles.carouselWrapInner} id="myCarousel-items">
         <div className={styles.carousel}>
           <button

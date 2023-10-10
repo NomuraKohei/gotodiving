@@ -12,14 +12,14 @@
 
   > .titleMain {
     font-size: var(--font-size-xxx-large);
-    letter-spacing: var(--text-xxx-large-letter-spacing);
+    letter-spacing: 0.2em;
   }
 
   > span.titleSub {
     display: block;
     font-size: var(--font-size-medium);
     letter-spacing: var(--text-medium-letter-spacing);
-    margin-left: 8px;
+    margin-left: -8px;
   }
 }
 
@@ -32,6 +32,10 @@
   left: 240px;
   bottom: 160px;
 
+  > span.titleSub {
+    margin-left: 4px;
+  }
+
   @media screen and (max-width: 904px) {
     left: 4vw;
     bottom: 4vh;
@@ -42,6 +46,10 @@
   right: 160px;
   top: 240px;
 
+  > span.titleSub {
+    margin-right: 16px;
+  }
+
   @media screen and (max-width: 904px) {
     right: 4vw;
     top: 12vh;
@@ -51,6 +59,11 @@
 .titleGourmet {
   left: 160px;
   top: calc(50% - 144px);
+
+  > span.titleSub {
+    margin-left: 4px;
+  }
+
   @media screen and (max-width: 904px) {
     left: 4vw;
   }

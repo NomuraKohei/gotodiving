@@ -11,6 +11,9 @@
 
 .question {
   font-size: var(--font-size-large);
+  letter-spacing: 0.15em;
+  text-align: center;
+  line-height: 2;
 }
 
 .carouselWrapInner {
@@ -132,6 +135,10 @@
   position: absolute;
   left: 160px;
   bottom: 80px;
+
+  h2 {
+    letter-spacing: 0.15em;
+  }
 
   @media screen and (max-width: 904px) {
     left: 10%;

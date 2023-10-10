@@ -115,12 +115,14 @@
   .accent {
     font-size: var(--font-size-large);
     letter-spacing: 0.5rem;
-    margin-left: 0.1em;
+    margin-left: 0.3em;
+    margin-right: 0.1em;
 
     @media screen and (max-width: 904px) {
-      font-size: var(--font-size-medium);
+      font-size: 1.2rem;
       letter-spacing: 0.2rem;
       margin-left: initial;
+      margin-right: initial;
       font-weight: bold;
     }
   }
